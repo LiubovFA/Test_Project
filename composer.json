@@ -1,0 +1,19 @@
+{
+  "name": "vendor_name/test_project",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Любовь",
+      "email": "fedorovala2015@gmail.com"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "test_project\\src\\": "src/"
+    }
+  }
+}
