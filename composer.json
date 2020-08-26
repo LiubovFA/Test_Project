@@ -1,5 +1,5 @@
 {
-  "name": "vendor_name/test_project",
+  "name": "test_project/app",
   "description": "description",
   "minimum-stability": "stable",
   "license": "proprietary",
@@ -10,10 +10,12 @@
     }
   ],
   "require": {
+    "ext-pdo": "*",
+    "ext-odbc": "*"
   },
   "autoload": {
     "psr-4": {
-      "test_project\\src\\": "src/"
+      "test_project\\": ""
     }
   }
 }

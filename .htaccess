@@ -1,6 +1,6 @@
 AddDefaultCharset utf-8
 
-DirectoryIndex index.php
+#DirectoryIndex index.php
 #включение модуля перезаписи URL
 RewriteEngine On
 

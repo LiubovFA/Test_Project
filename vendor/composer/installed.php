@@ -1,24 +1,24 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'No version set (parsed as 1.0.0)',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
-    'name' => 'vendor_name/test_project',
+    'reference' => 'a5ab716657e5a388264f00b00449c29f3d30fefd',
+    'name' => 'test_project/app',
   ),
   'versions' => 
   array (
-    'vendor_name/test_project' => 
+    'test_project/app' => 
     array (
-      'pretty_version' => 'No version set (parsed as 1.0.0)',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => 'a5ab716657e5a388264f00b00449c29f3d30fefd',
     ),
   ),
 );
