@@ -10,18 +10,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dfb40c1c-e73a-416e-ad30-a5320cfe2c14" name="Default Changelist" comment="Created a new project&#10;Created a .htaccess file&#10;Connected Apache&#10;Initiated Composer">
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
-    </list>
+    <list default="true" id="dfb40c1c-e73a-416e-ad30-a5320cfe2c14" name="Default Changelist" comment="Реализован класс Router&#10;Подключен и настроен Composer&#10;Созданы модели Author, Book, Authorship&#10;Реализовано подключение к базе данных в классе Db&#10;Создан контроллер Main и реализованны следующих данных: список авторов и список книг&#10;Использование PDO для соединения с бд и получения данных из бд" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,7 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1597961925268</updated>
       <workItem from="1597961926405" duration="23342000" />
-      <workItem from="1598108162913" duration="54360000" />
+      <workItem from="1598108162913" duration="54668000" />
     </task>
     <task id="LOCAL-00001" summary="Created a new project&#10;Created a .htaccess file&#10;Connected Apache&#10;Initiated Composer">
       <created>1597966450286</created>
@@ -131,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1597966450286</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Реализован класс Router&#10;Подключен и настроен Composer&#10;Созданы модели Author, Book, Authorship&#10;Реализовано подключение к базе данных в классе Db&#10;Создан контроллер Main и реализованны следующих данных: список авторов и список книг&#10;Использование PDO для соединения с бд и получения данных из бд">
+      <created>1598460958726</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598460958726</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,7 +147,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created a new project&#10;Created a .htaccess file&#10;Connected Apache&#10;Initiated Composer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created a new project&#10;Created a .htaccess file&#10;Connected Apache&#10;Initiated Composer" />
+    <MESSAGE value="Реализован класс Router&#10;Подключен и настроен Composer&#10;Созданы модели Author, Book, Authorship&#10;Реализовано подключение к базе данных в классе Db&#10;Создан контроллер Main и реализованны следующих данных: список авторов и список книг&#10;Использование PDO для соединения с бд и получения данных из бд" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализован класс Router&#10;Подключен и настроен Composer&#10;Созданы модели Author, Book, Authorship&#10;Реализовано подключение к базе данных в классе Db&#10;Создан контроллер Main и реализованны следующих данных: список авторов и список книг&#10;Использование PDO для соединения с бд и получения данных из бд" />
   </component>
   <component name="WindowStateProjectService">
     <state x="313" y="79" key="#CLI_Interpreters" timestamp="1597963344302">
