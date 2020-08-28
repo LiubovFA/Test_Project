@@ -18,30 +18,32 @@ class Book extends Db
         $this->db = $db_connection;
     }
 
-    public function get_book_id()
+    public function getId()
     {
         return $this->Id;
     }
 
-    public function get_book_name()
+    public function getName()
     {
         return $this->book_name;
     }
 
-    public function get_book_content()
+    public function getContent()
     {
         return $this->content;
     }
 
-    public function getBookInfo()
+    public function getAllInfo(int $Id)
     {
-        $info = [
-            "id" => $this->Id,
-            "book_name" => $this->book_name,
-            "content" => $this->content
-            ];
-
-        return $info;
+       $data = $this->db->prepare('Select Book.Id_book, Book.Name, A2.Full_name, Book.Content from Book
+                                            inner join Authorship A on Book.Id_book = A.Id_book
+                                            inner join Author A2 on A.Id_author = A2.Id_author
+                                            Where A.Id_book = ?');
+       if ($data->execute([$Id]))
+       {
+           return $data->fetchAll(PDO::FETCH_ASSOC);
+       }
+       else return null;
     }
 
     public function getAll()
@@ -53,7 +55,7 @@ class Book extends Db
         $type = null;
         $content = null;
         $id = null;
-        if ($data->execute())
+        /*if ($data->execute())
         {
             $data->bindColumn(1, $id, PDO::PARAM_INT);
             $data->bindColumn(2, $type, PDO::PARAM_STR, 400);
@@ -63,8 +65,25 @@ class Book extends Db
                 ["Id_book" => $id, "Name" => $type, "Content" => $content] : null;
         } else {
             return null;
-        }
+        }*/
 
+        if ($data->execute()) {
+            return $data->fetchAll(PDO::FETCH_BOTH);
+        }
+        else return null;
+
+    }
+
+    public function getBooksByAuthor(int $Id)
+    {
+        $query_books = $this->db->prepare('select Book.Id_book, Book.Name, Book.Content from Book
+                                                    inner join Authorship A on Book.Id_book = A.Id_book
+                                                    where A.Id_book = ?');
+        if( $query_books->execute([$Id]))
+        {
+            return $query_books->fetchAll(PDO::FETCH_ASSOC);
+        }
+        else return null;
     }
 
 }

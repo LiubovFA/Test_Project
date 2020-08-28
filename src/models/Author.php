@@ -17,19 +17,19 @@ class Author extends Db
         $this->db = $db_connection;
     }
 
-    public function get_author_id()
+    public function getId()
     {
         return $this->Id;
     }
 
-    public function get_author_name()
+    public function getName()
     {
         return $this->full_name;
     }
 
     public function getAll()
     {
-        $data = $this->db->query('SELECT * from Author')->fetchAll(PDO::FETCH_UNIQUE);
+        $data = $this->db->query('SELECT * from Author')->fetchAll(PDO::FETCH_ASSOC);
 
         return $data;
     }

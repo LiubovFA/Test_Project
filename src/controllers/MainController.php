@@ -28,7 +28,6 @@ class MainController
         }
 
     //    $this->view->generate('HomeView.php', 'template_view.php');
-       // echo ' контроллер создан!';
     }
     public function index()
     {
@@ -36,9 +35,21 @@ class MainController
         try {
             $book = new Book($this->db_connection);
 
-            $books = $book->getAll($this->db_connection);
+            $books = $book->getAll();
             //   View::render('HomeView.php', $books);
-            print_r($books);
+
+            echo '<br> Всего книг:'.count($books);
+
+            for ($row = 0; $row < count($books); $row++)
+            {
+                echo "<p><b>Book № $row</b></p>";
+                echo "<ul>";
+                    echo $books[$row]['Name'].'<br>';
+                  //  echo $books[$row]['Content'].'<br>';
+                echo "</ul>";
+            }
+            echo '<br>';
+
           //  View::render('HomeView.php');
         }
         catch (\Exception $exception)
@@ -53,7 +64,7 @@ class MainController
         try {
             $author = new Author($this->db_connection);
 
-            $authors = $author->getAll($this->db_connection);
+            $authors = $author->getAll();
             //   View::render('HomeView.php', $books);
             print_r($authors);
             //  View::render('HomeView.php');
@@ -62,5 +73,10 @@ class MainController
         {
             echo $exception->getMessage();
         }
+    }
+
+    public function getBooks()
+    {
+
     }
 }
