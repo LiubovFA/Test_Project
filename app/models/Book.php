@@ -1,21 +1,19 @@
 <?php
 
-namespace test_project\src\models;
+namespace test_project\app\models;
 
 use PDO;
-use test_project\src\classes\Db;
+use test_project\app\App;
 
-class Book extends Db
+class Book
 {
     private int $Id;
     private string $book_name;
     private string $content;
-    protected $db;
 
 
-    public function __construct(PDO $db_connection)
+    public function __construct()
     {
-        $this->db = $db_connection;
     }
 
     public function getId()
@@ -35,7 +33,7 @@ class Book extends Db
 
     public function getAllInfo(int $Id)
     {
-       $data = $this->db->prepare('Select Book.Id_book, Book.Name, A2.Full_name, Book.Content from Book
+       $data = App::$db->getConnection()->prepare('Select Book.Id_book, Book.Name, A2.Full_name, Book.Content from Book
                                             inner join Authorship A on Book.Id_book = A.Id_book
                                             inner join Author A2 on A.Id_author = A2.Id_author
                                             Where A.Id_book = ?');
@@ -50,7 +48,7 @@ class Book extends Db
     {
         //$data = $this->db->query('SELECT Id_book, Name, Content from Book')->fetchAll(PDO::FETCH_UNIQUE);
 
-        $data = $this->db->prepare('SELECT Id_book, Name, Content from Book');
+        $data = App::$db->getConnection()->prepare('SELECT Id_book, Name, Content from Book');
 
         $type = null;
         $content = null;
@@ -76,9 +74,9 @@ class Book extends Db
 
     public function getBooksByAuthor(int $Id)
     {
-        $query_books = $this->db->prepare('select Book.Id_book, Book.Name, Book.Content from Book
+        $query_books = App::$db->getConnection()->prepare('select Book.Id_book, Book.Name, Book.Content from Book
                                                     inner join Authorship A on Book.Id_book = A.Id_book
-                                                    where A.Id_book = ?');
+                                                    where A.Id_author = ?');
         if( $query_books->execute([$Id]))
         {
             return $query_books->fetchAll(PDO::FETCH_ASSOC);

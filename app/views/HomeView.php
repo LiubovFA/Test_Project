@@ -11,16 +11,16 @@ namespace src\views;
 </head>
 <body>
 <h1>BOOKOCEAN</h1>
-<div>
+<div class="main_page">
     <div id="book_list_refs">
         <p><a>Список авторов</a></p>
         <p><a>Список книг</a></p>
-    </div>
-    <div id="authorlist" >
-        <p>список авторов</p>
-    </div>
-    <div >
-        <p>список книг</p>
+        <div id="authorlist" >
+            <p>Список авторов</p>
+        </div>
+        <div id="bookList">
+            <p>Список книг</p>
+        </div>
     </div>
 </div>
 </body>

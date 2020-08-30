@@ -1,13 +1,13 @@
 <?php
 
-namespace test_project\src\classes;
+namespace test_project\app\classes;
 
 class View
 {
     public static function render (string $path, array $data = [])
     {
         // Получаем путь, где лежат все представления
-        $fullPath = __DIR__ . '/../Views/' . $path . '.php';
+        $fullPath = __DIR__ . '/src/views/' . $path . '.php';
 
          // Если представление не было найдено, выбрасываем исключение
          if (!file_exists($fullPath)) {
