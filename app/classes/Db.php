@@ -34,7 +34,7 @@ class Db
 
         $this->connection = $result_connect;
         $this->connection->exec('set names utf8');
-        echo ' DB is connected';
+        //echo ' DB is connected';
     }
 
     public function disconnect()

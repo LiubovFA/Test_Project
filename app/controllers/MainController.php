@@ -2,16 +2,17 @@
 
 namespace test_project\app\controllers;
 
+use Exception;
+use test_project\app\classes\Controller;
+use test_project\app\classes\View;
 use test_project\app\models\Book;
 use test_project\app\models\Author;
-use test_project\app\classes\View;
 
-class MainController
+class MainController extends Controller
 {
-    public View $view;
-
     public function __construct()
     {
+        self::$view = new View();
        /* $db = new Db();
         try
         {
@@ -22,7 +23,7 @@ class MainController
             echo $e->getMessage();
         }*/
 
-    //    $this->view->generate('HomeView.php', 'template_view.php');
+    //    $this->view->generate('Index.php', 'template_view.php');
     }
 
 
@@ -32,8 +33,8 @@ class MainController
             $book = new Book();
 
             $books = $book->getAll();
-            //   View::render('HomeView.php', $books);
-
+            //   View::render('Index.php', $books);
+/*
             echo '<br> Всего книг:'.count($books);
 
             for ($row = 0; $row < count($books); $row++)
@@ -44,12 +45,13 @@ class MainController
                   //  echo $books[$row]['Content'].'<br>';
                 echo "</ul>";
             }
-            echo '<br>';
+            echo '<br>';*/
 
+            self::showView('Index', $books);
             //$this->view
-          //  View::render('HomeView.php');
+          //  View::render('Index.php');
         }
-        catch (\Exception $exception)
+        catch (Exception $exception)
         {
             echo $exception->getMessage();
         }
@@ -61,7 +63,8 @@ class MainController
             $author = new Author();
 
             $authors = $author->getAll();
-            //   View::render('HomeView.php', $books);
+            //   View::render('Index.php', $books);
+            /*
             for ($row = 0; $row < count($authors); $row++)
             {
                 echo "<p><b> Author Id".$authors[$row]['Id_author']."</b></p>";
@@ -70,10 +73,12 @@ class MainController
                 //  echo $books[$row]['Content'].'<br>';
                 echo "</ul>";
             }
-            echo '<br>';
-            //  View::render('HomeView.php');
+            echo '<br>';*/
+
+            //  View::render('Index.php');
+            self::showView('Index', $authors);
         }
-        catch (\Exception $exception)
+        catch (Exception $exception)
         {
             echo $exception->getMessage();
         }
@@ -87,16 +92,18 @@ class MainController
 
             $books = $book->getBooksByAuthor($Id);
 
+            /*
             for ($row = 0; $row < count($books); $row++)
             {
                 echo "<p><b>Book Id".$books[$row]['Id_book']."</b></p>";
                 echo "<ul>";
                 echo $books[$row]['Name'].'<br>';
                 echo "</ul>";
-            }
+            }*/
 
+            self::showView('Index', $books);
         }
-        catch(\Exception $exc)
+        catch(Exception $exc)
         {
             echo $exc->getCode().' + '.$exc->getMessage();
         }

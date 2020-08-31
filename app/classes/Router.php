@@ -6,7 +6,7 @@ namespace test_project\app\classes;
 class Router
 {
     private $routes = [
-        "#^/test_project/$#"        => ['controller' => "Main", 'action' => "index", 'arg' => ''],
+        "#^/test_project$#"        => ['controller' => "Main", 'action' => "index", 'arg' => ''],
         "#^/test_project/authors$#" => ['controller' => "Main", 'action' => "getAuthorList", 'arg' => ''],
         "#^/test_project/authors/([0-9]+)$#" => ['controller'=> "Main", 'action' => 'getBooksByAuthor', 'arg' => ''],
         "#^/test_project/books$#" => ['controller' => "Main", 'action' => 'getAll', 'arg' => ''],
@@ -65,26 +65,17 @@ class Router
             $result = preg_match($uri, $path,$match);
             if ($result)
             {
-                echo '<br>';
-                print_r($match);
-                echo '<br>';
-
-                print_r($params);
-                echo '<br>';
-
                 $path_parts = array_filter(explode('/', $path));
 
                 $controller = 'test_project\\app\\controllers\\'.$params['controller'].'Controller';
 
-                $ctr_obj = new $controller;
+                $ctr_obj = new $controller();
                 $action = $params['action'];
 
-                print_r($path_parts);
-                echo '<br>';
+                //print_r($path_parts);
 
                 if (count($path_parts)>2) {
                     $arg = $path_parts[3];
-                    echo $arg. '<br>';
                     $ctr_obj->$action($arg);
                 }
                 else
@@ -122,6 +113,7 @@ class Router
 
     private function getURI()
     {
-        return $_SERVER['REQUEST_URI'];
+        $query = rtrim($_SERVER['REQUEST_URI'], "/");
+        return $query;
     }
 }

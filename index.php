@@ -8,7 +8,7 @@ require_once __DIR__ . '/app/App.php';
 
 try
 {
-    echo 'Погнале! <br>';
+   // echo 'Погнале! <br>';
 
     App::init();
 }

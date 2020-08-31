@@ -2,10 +2,11 @@
 
 namespace test_project\app\controllers;
 
+use test_project\app\classes\Controller;
 use test_project\app\models\Book;
 use test_project\app\classes\View;
 
-class BookController
+class BookController extends Controller
 {
     public View $view;
 
@@ -16,11 +17,7 @@ class BookController
 
         $data = $book->getAllInfo($Id);
 
-        echo '<br>'.$data[0]['Id_book'];
-        echo '<br>'.$data[0]['Name'];
-        echo '<br>'.$data[0]['Full_name'];
-        echo '<br>'.$data[0]['Content'];
-        echo '<br>';
+        self::showView('Read', $data);
     }
 
 }

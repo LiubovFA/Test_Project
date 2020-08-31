@@ -2,16 +2,31 @@
 
 namespace test_project\app\classes;
 
+use ErrorException;
+use function Composer\Autoload\includeFile;
+
 class View
 {
-    public static function render (string $path, array $data = [])
-    {
-        // Получаем путь, где лежат все представления
-        $fullPath = __DIR__ . '/src/views/' . $path . '.php';
+    private $layout;
+    public $view;
 
+    public function __construct($view = "")
+    {
+        $this->view = $view;
+        $this->layout = $_SERVER['DOCUMENT_ROOT'].'/app/views/layout.php';
+    }
+
+    public function render (array $data = [])
+    {
+        //echo '<br>'.$path.'<br>';
+        // Получаем путь, где лежат все представления
+        $fullPath = $_SERVER['DOCUMENT_ROOT'].'/app/views/' . $this->view. '.php';
+
+        ob_start();
+        //echo '<br>'.$fullPath.'<br>';
          // Если представление не было найдено, выбрасываем исключение
          if (!file_exists($fullPath)) {
-             throw new \ErrorException('view cannot be found');
+             throw new ErrorException('view cannot be found');
          }
 
          // Если данные были переданы, то из элементов массива
@@ -23,10 +38,10 @@ class View
                  $$key = $value;
              }
          }
+         require $fullPath;
 
-         // Отображаем представление
-        // подумать!!!
+         $content = ob_get_clean();
 
-         include($fullPath);
+         require $this->layout;
     }
 }
