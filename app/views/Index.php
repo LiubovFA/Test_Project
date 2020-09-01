@@ -12,9 +12,14 @@
         <p><a href="">Список книг</a></p>
         <div class="ref_list">
             <ul>
-                <li><a href="">Книга 1</li>
-                <li><a href="">Книга 2</li>
-                <li><a href="">Книга 3</li>
+                <?php
+                for ($row = 0; $row<count($args); $row++)
+                {
+                    foreach ($args as $item)
+                    {
+                       echo '<li><a href="">'.$item[$row]['Name'].'</li>';
+                    }
+                }?>
             </ul>
         </div>
     </div>
