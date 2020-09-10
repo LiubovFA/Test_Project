@@ -17,7 +17,9 @@ class BookController extends Controller
 
         $data = $book->getAllInfo($Id);
 
-        self::showView('Read', $data);
+        $this->view->setView("Read");
+
+        $this->showView('Чтение книги', $data);
     }
 
 }

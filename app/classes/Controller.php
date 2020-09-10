@@ -3,19 +3,23 @@
 namespace test_project\app\classes;
 
 use Exception;
-use test_project\app\classes\View;
+//use test_project\app\classes\View;
 
 abstract class Controller
 {
-    protected static View $view;
+   // protected $view;
 
-    public static function showView($viewName, $data = [])
+    public function __construct()
+    {
+       // $this->view = new View();
+    }
+
+    public function showView($title, $data = [])
     {
         try {
-            self::$view = new View($viewName);
-            self::$view->render($data);
-
-        } catch (Exception $e)
+          //  $this->view->render($title, $data);
+        }
+        catch (Exception $e)
         {
             echo $e->getCode() .' + '. $e->getMessage();
         }

@@ -11,12 +11,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dfb40c1c-e73a-416e-ad30-a5320cfe2c14" name="Default Changelist" comment="Добавлен JQuery и Bootstrap&#10;Создан абстрактный класс Controller и метод отображения представления, реализованно наследование его другими контроллерами&#10;&#10;Дополнен класс View - конструктор и рендер&#10;&#10;Попытка реализовать layout и index view. Передача $content в layout - не удается.">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b/storage_v2/_src_/database/bookshelf_db.nKzHPw/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b/storage_v2/_src_/database/bookshelf_db.nKzHPw/schema/dbo.sYMBAA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b/storage_v2/_src_/database/bookshelf_db.nKzHPw/schema/dbo.sYMBAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b/storage_v2/_src_/database/bookshelf_db.nKzHPw/schema/dbo.sYMBAA.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/classes/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/classes/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/View.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/BookController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/Read.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Read.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/autoload.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/autoload.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +47,7 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="c1fa7c36-1cf9-4d45-8eb4-e5ef430bcd87" />
+      <executable path="composer" />
     </execution>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -67,8 +88,9 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="dumpAutoload C:/Users/daugh/PhpstormProjects/test_project/composer.json" value="--no-interaction --ansi --verbose --no-scripts --classmap-authoritative --apcu --no-dev" />
     <property name="dumpAutoload C:/Users/Катерина/PhpstormProjects/test_project/composer.json" value="--no-interaction --ansi --verbose" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mvc_5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../xampp/htdocs/test_project" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -77,18 +99,20 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="settings.editor.selected.configurable" value="web.server" />
+    <property name="validate C:/Users/daugh/PhpstormProjects/test_project/composer.json" value="--no-interaction --ansi --verbose --with-dependencies" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Катерина\PhpstormProjects\test_project" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Катерина\PhpstormProjects\test_project\app\views\style\css" />
       <recent name="C:\Users\Катерина\PhpstormProjects\test_project\app\views" />
       <recent name="C:\Users\Катерина\PhpstormProjects\test_project\app\views\Book" />
       <recent name="C:\Users\Катерина\PhpstormProjects\test_project\app\views\Main" />
       <recent name="C:\Users\Катерина\PhpstormProjects\test_project\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Катерина\PhpstormProjects\test_project" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Web Page.Run">
@@ -128,6 +152,11 @@
       <workItem from="1598523344463" duration="20310000" />
       <workItem from="1598696680875" duration="52152000" />
       <workItem from="1598878323383" duration="13645000" />
+      <workItem from="1599302652065" duration="10192000" />
+      <workItem from="1599404048121" duration="27731000" />
+      <workItem from="1599679803592" duration="3261000" />
+      <workItem from="1599730926633" duration="457000" />
+      <workItem from="1599736566384" duration="2695000" />
     </task>
     <task id="LOCAL-00001" summary="Created a new project&#10;Created a .htaccess file&#10;Connected Apache&#10;Initiated Composer">
       <created>1597966450286</created>
@@ -202,25 +231,36 @@
     <MESSAGE value="Router -&gt; внесены еще пути в routes&#10;Book -&gt; созданы getAllInfo() - получение всей информации по книге, getBooksByAuthor() - получение списка книг конкретного автора, изменен метод getAll() - параметр для fetchAll. DECOMPRESS - не работает, разобраться&#10;MainController -&gt; изменен index(), реализован getAuthorList()." />
     <MESSAGE value="Router -&gt; Настроена работа маршрутизатора, с использованием регулярных выражений. Теперь работает исправно.&#10;Создан статический класс App - локатор служб - запускает приложение, хранит в себе подключение к бд и рутер. Теперь можно получать данных из БД в любом месте программы.&#10;Теперь отсутствуют поля подключения в контроллерах!&#10;Создан config.php - храняться данные для подключения к БД&#10;Db-&gt;реализовано получение данных в кодировке utf-8&#10;Контроллеры:&#10;MainController -&gt; Подкорректированы методы index, getAuthorList, дополнен метод getBooksByAuthor&#10;BookController -&gt; реализован метод Read - отображение содержимого конкретной книги&#10;Модели:&#10;во всех моделях обращение к базе реализовано через класс App&#10;Book-&gt;реализован метод получения списка книг определенного автора - getBooksByAuthor&#10;Author-&gt;реализован метод получения имени по Id" />
     <MESSAGE value="Добавлен JQuery и Bootstrap&#10;Создан абстрактный класс Controller и метод отображения представления, реализованно наследование его другими контроллерами&#10;&#10;Дополнен класс View - конструктор и рендер&#10;&#10;Попытка реализовать layout и index view. Передача $content в layout - не удается." />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен JQuery и Bootstrap&#10;Создан абстрактный класс Controller и метод отображения представления, реализованно наследование его другими контроллерами&#10;&#10;Дополнен класс View - конструктор и рендер&#10;&#10;Попытка реализовать layout и index view. Передача $content в layout - не удается." />
+    <MESSAGE value="Реализовано подключение шаблона + Index view.&#10;&#10;Обнаружена проблема с маршрутизацией - необходимо решить" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализовано подключение шаблона + Index view.&#10;&#10;Обнаружена проблема с маршрутизацией - необходимо решить" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="313" y="79" key="#CLI_Interpreters" timestamp="1597963344302">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="278" y="38" key="#CLI_Interpreters" timestamp="1599737022722">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="278" y="38" key="#CLI_Interpreters/0.0.1366.728@0.0.1366.728" timestamp="1599737022722" />
     <state x="313" y="79" key="#CLI_Interpreters/0.0.1536.824@0.0.1536.824" timestamp="1597963344302" />
+    <state x="275" y="22" key="#Deployment" timestamp="1599738387809">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="22" key="#Deployment/0.0.1366.728@0.0.1366.728" timestamp="1599738387809" />
     <state x="395" y="91" key="#Inspections" timestamp="1598885437507">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="395" y="91" key="#Inspections/0.0.1536.824@0.0.1536.824" timestamp="1598885437507" />
-    <state x="361" y="71" key="#Intentions" timestamp="1598892572408">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="321" y="0" width="816" height="728" key="#Intentions" timestamp="1599336463765">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="321" y="0" width="816" height="728" key="#Intentions/0.0.1366.728@0.0.1366.728" timestamp="1599336463765" />
     <state x="361" y="71" key="#Intentions/0.0.1536.824@0.0.1536.824" timestamp="1598892572408" />
     <state x="485" y="248" key="#Notifications" timestamp="1597969491753">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="485" y="248" key="#Notifications/0.0.1536.824@0.0.1536.824" timestamp="1597969491753" />
+    <state x="360" y="45" key="#Options" timestamp="1599738172890">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="360" y="45" key="#Options/0.0.1366.728@0.0.1366.728" timestamp="1599738172890" />
     <state x="194" y="254" key="#SQL_Dialects" timestamp="1598275781569">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -229,29 +269,34 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="451" y="95" key="#Servers/0.0.1536.824@0.0.1536.824" timestamp="1598207950467" />
-    <state x="127" y="88" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598462116730">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="-23" y="15" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599405949347">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="-23" y="15" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1599405949347" />
     <state x="127" y="88" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1598462116730" />
     <state x="530" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598012541311">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="530" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1598012541311" />
-    <state x="581" y="294" key="ComposerDumpAutoloadDialog" timestamp="1598098477238">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="517" y="260" key="ComposerDumpAutoloadDialog" timestamp="1599336742715">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="517" y="260" key="ComposerDumpAutoloadDialog/0.0.1366.728@0.0.1366.728" timestamp="1599336742715" />
     <state x="581" y="294" key="ComposerDumpAutoloadDialog/0.0.1536.824@0.0.1536.824" timestamp="1598098477238" />
-    <state x="510" y="337" width="445" height="264" key="ComposerInitDialogKey" timestamp="1597964427883">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="454" y="298" width="447" height="234" key="ComposerInitDialogKey" timestamp="1599336203057">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="454" y="298" width="447" height="234" key="ComposerInitDialogKey/0.0.1366.728@0.0.1366.728" timestamp="1599336203057" />
     <state x="510" y="337" width="445" height="264" key="ComposerInitDialogKey/0.0.1536.824@0.0.1536.824" timestamp="1597964427883" />
-    <state x="633" y="318" key="ComposerValidateDialog" timestamp="1598098395714">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="563" y="281" key="ComposerValidateDialog" timestamp="1599336817488">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="563" y="281" key="ComposerValidateDialog/0.0.1366.728@0.0.1366.728" timestamp="1599336817488" />
     <state x="633" y="318" key="ComposerValidateDialog/0.0.1536.824@0.0.1536.824" timestamp="1598098395714" />
-    <state x="513" y="179" key="FileChooserDialogImpl" timestamp="1598721042967">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="200" y="142" key="FileChooserDialogImpl" timestamp="1599738202178">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="200" y="142" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1599738202178" />
     <state x="513" y="179" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1598721042967" />
     <state width="926" height="210" key="GridCell.Tab.0.bottom" timestamp="1598462166055">
       <screen x="0" y="0" width="1536" height="824" />
@@ -269,18 +314,27 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="926" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598462166055" />
-    <state x="494" y="39" key="SettingsEditor" timestamp="1598462087228">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="20" y="18" key="SettingsEditor" timestamp="1599737389324">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="20" y="18" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1599737389324" />
     <state x="494" y="39" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598462087228" />
     <state x="326" y="157" key="Vcs.Push.Dialog.v2" timestamp="1598790035762">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="326" y="157" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598790035762" />
+    <state x="555" y="206" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1599405923461">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="555" y="206" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1366.728@0.0.1366.728" timestamp="1599405923461" />
     <state x="551" y="338" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1597966361603">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="551" y="338" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1597966361603" />
+    <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1599737020039">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="0" y="0" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/0.0.1366.728@0.0.1366.728" timestamp="1599737020039" />
     <state x="486" y="184" key="refactoring.ChangeSignatureDialog" timestamp="1598711762607">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

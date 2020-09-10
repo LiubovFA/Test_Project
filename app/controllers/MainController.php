@@ -4,13 +4,14 @@ namespace test_project\app\controllers;
 
 use Exception;
 use test_project\app\classes\Controller;
-use test_project\app\classes\View;
+//use test_project\app\classes\View;
+
 use test_project\app\models\Book;
 use test_project\app\models\Author;
 
 class MainController extends Controller
 {
-    public function __construct()
+    /*public function __construct()
     {
         self::$view = new View();
        /* $db = new Db();
@@ -21,11 +22,8 @@ class MainController extends Controller
         catch (\ErrorException $e)
         {
             echo $e->getMessage();
-        }*/
-
-    //    $this->view->generate('Index.php', 'template_view.php');
-    }
-
+        }
+    }*/
 
     public function index()
     {
@@ -33,8 +31,15 @@ class MainController extends Controller
             $book = new Book();
 
             $books = $book->getAll();
+
+           // $this->view->setView("Index");
+
+           // $this->showView('Главная страница', $books);
+
             //   View::render('Index.php', $books);
-/*
+
+           // echo '<a href="/test_project/authors">По автору</a>';
+
             echo '<br> Всего книг:'.count($books);
 
             for ($row = 0; $row < count($books); $row++)
@@ -42,12 +47,11 @@ class MainController extends Controller
                 echo "<p><b>Book Id".$books[$row]['Id_book']."</b></p>";
                 echo "<ul>";
                     echo $books[$row]['Name'].'<br>';
-                  //  echo $books[$row]['Content'].'<br>';
                 echo "</ul>";
             }
-            echo '<br>';*/
+            echo '<br>';
 
-            self::showView('Index', $books);
+           // self::showView('Index', $books);
             //$this->view
           //  View::render('Index.php');
         }
@@ -63,20 +67,22 @@ class MainController extends Controller
             $author = new Author();
 
             $authors = $author->getAll();
+
+         //   $this->view->setView("Index");
+
+         //   $this->showView('Главная страница', $authors);
             //   View::render('Index.php', $books);
-            /*
+
             for ($row = 0; $row < count($authors); $row++)
             {
                 echo "<p><b> Author Id".$authors[$row]['Id_author']."</b></p>";
                 echo "<ul>";
                 echo $authors[$row]['Full_name'].'<br>';
-                //  echo $books[$row]['Content'].'<br>';
                 echo "</ul>";
             }
-            echo '<br>';*/
+            echo '<br>';
 
             //  View::render('Index.php');
-            self::showView('Index', $authors);
         }
         catch (Exception $exception)
         {
@@ -101,7 +107,7 @@ class MainController extends Controller
                 echo "</ul>";
             }*/
 
-            self::showView('Index', $books);
+           // self::showView('Index', $books);
         }
         catch(Exception $exc)
         {
