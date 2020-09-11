@@ -1,4 +1,4 @@
-<p>Список книг</p>
+<p><b>Список книг</b></p>
 
 <a href='http://localhost/test_project/authors' >По автору</a>
 <br>
@@ -10,12 +10,22 @@
 
 foreach ($data as $row)
 {
-    $id = $row['Id_book'];
-    echo "<li>";
-    echo "<a href=\"http://localhost/test_project/books/$id\">";
-    echo '<q>'.$row['Name'].'</q>';
-    //  echo $books[$row]['Content'].'<br>';
-    echo "</a></p></li>";
+    if ($type == "authors")
+    {
+        $id = $row['Id_author'];
+        echo "<li>";
+        echo "<a href=\"http://localhost/test_project/authors/$id\">";
+        echo '<q>' . $row['Full_name'] . '</q>';
+        echo "</a></p></li>";
+    }
+    else {
+        $id = $row['Id_book'];
+        echo "<li>";
+        echo "<a href=\"http://localhost/test_project/books/$id\">";
+        echo '<q>' . $row['Name'] . '</q>';
+        //  echo $books[$row]['Content'].'<br>';
+        echo "</a></p></li>";
+    }
 }
 
 ?>

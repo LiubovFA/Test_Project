@@ -48,7 +48,7 @@ class Book
     {
         //$data = $this->db->query('SELECT Id_book, Name, Content from Book')->fetchAll(PDO::FETCH_UNIQUE);
 
-        $data = App::$db->getConnection()->prepare('SELECT Id_book, Name, Content from Book');
+        $data = App::$db->getConnection()->prepare('SELECT Id_book, Name from Book');
 
         $type = null;
         $content = null;

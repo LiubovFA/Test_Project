@@ -4,7 +4,7 @@ namespace test_project\app\controllers;
 
 use Exception;
 use test_project\app\classes\Controller;
-//use test_project\app\classes\View;
+use test_project\app\classes\View;
 
 use test_project\app\models\Book;
 use test_project\app\models\Author;
@@ -32,15 +32,15 @@ class MainController extends Controller
 
             $books = $book->getAll();
 
-           // $this->view->setView("Index");
+            $this->view->setView("Index", "books");
 
-           // $this->showView('Главная страница', $books);
+            $this->showView('Главная страница', $books);
 
             //   View::render('Index.php', $books);
 
            // echo '<a href="/test_project/authors">По автору</a>';
 
-            echo '<br> Всего книг:'.count($books);
+           /* echo '<br> Всего книг:'.count($books);
 
             for ($row = 0; $row < count($books); $row++)
             {
@@ -49,9 +49,9 @@ class MainController extends Controller
                     echo $books[$row]['Name'].'<br>';
                 echo "</ul>";
             }
-            echo '<br>';
+            echo '<br>';*/
 
-           // self::showView('Index', $books);
+            //self::showView('Index', $books);
             //$this->view
           //  View::render('Index.php');
         }
@@ -68,19 +68,18 @@ class MainController extends Controller
 
             $authors = $author->getAll();
 
-         //   $this->view->setView("Index");
+            $this->view->setView("Index", "authors");
 
-         //   $this->showView('Главная страница', $authors);
-            //   View::render('Index.php', $books);
+            $this->showView('Главная страница', $authors);
 
-            for ($row = 0; $row < count($authors); $row++)
+            /*for ($row = 0; $row < count($authors); $row++)
             {
                 echo "<p><b> Author Id".$authors[$row]['Id_author']."</b></p>";
                 echo "<ul>";
                 echo $authors[$row]['Full_name'].'<br>';
                 echo "</ul>";
             }
-            echo '<br>';
+            echo '<br>';*/
 
             //  View::render('Index.php');
         }
@@ -92,11 +91,15 @@ class MainController extends Controller
 
     public function getBooksByAuthor(int $Id)
     {
-        echo 'Мы в методе получения списка книг автора + '.$Id;
+        //echo 'Мы в методе получения списка книг автора + '.$Id;
         try {
             $book = new Book();
 
             $books = $book->getBooksByAuthor($Id);
+
+            $this->view->setView("Index", "authorBooks");
+
+            $this->showView('Главная страница', $books);
 
             /*
             for ($row = 0; $row < count($books); $row++)

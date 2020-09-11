@@ -8,16 +8,14 @@ use test_project\app\classes\View;
 
 class BookController extends Controller
 {
-    public View $view;
-
     public function Read(int $Id)
     {
-        echo 'Зашли в BookController + '.$Id;
+        //echo 'Зашли в BookController + '.$Id;
         $book = new Book();
 
         $data = $book->getAllInfo($Id);
 
-        $this->view->setView("Read");
+        $this->view->setView("Read", "readBook");
 
         $this->showView('Чтение книги', $data);
     }

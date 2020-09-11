@@ -8,6 +8,7 @@ class View
 {
     private $layout = 'app/views/layout.php';
     public $viewName;
+    public $dataType;
     private $path;
     private $args = [];
 
@@ -15,9 +16,10 @@ class View
     {
     }
 
-    public function setView($view)
+    public function setView($view, $type = '')
     {
         $this->viewName = $view;
+        $this->dataType = $type;
     }
 
     public function render ($title, array $data = [])
@@ -25,6 +27,7 @@ class View
         // Получаем путь, где лежат все представления
         $fullPath = 'app/views/' . $this->viewName. '.php';
 
+        $type = $this->dataType;
         // Если представление не было найдено, выбрасываем исключение
         if (!file_exists($fullPath)) {
             throw new ErrorException('View cannot be found');

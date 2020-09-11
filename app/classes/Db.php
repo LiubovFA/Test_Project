@@ -20,6 +20,7 @@ class Db
         try
         {
             $result_connect = new PDO($dns, "", "");
+
         }
         catch (PdoException $ex)
         {
@@ -28,7 +29,7 @@ class Db
 
         $this->connection = $result_connect;
         $this->connection->exec('set names utf8');
-        echo 'DB is connected! <br>';
+        //echo 'DB is connected! <br>';
     }
 
     public function disconnect()

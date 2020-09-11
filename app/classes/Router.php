@@ -27,13 +27,14 @@ class Router
 
     public function start()
     {
-        echo 'Router is created! <br>';
+        //echo 'Router is created! <br>';
         $path = $this->getURI();
 
-        echo "request_uri = $path <br>";
+       // echo "request_uri = $path <br>";
 
         foreach($this->routes as $uri => $params)
         {
+           // echo 'check <br>';
             $result = preg_match($uri, $path,$match);
             if ($result)
             {
@@ -54,6 +55,7 @@ class Router
                 {
                     $ctr_obj->$action();
                 }
+                break;
             }
         }
     }
@@ -61,7 +63,7 @@ class Router
     private function getURI()
     {
         $query = rtrim($_SERVER['REQUEST_URI'], "/");
-        echo $_SERVER['REQUEST_URI'].' $query is '.$query.' ';
+       // echo $_SERVER['REQUEST_URI'].' $query is '.$query.' ';
         return $query;
     }
 }

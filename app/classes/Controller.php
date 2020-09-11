@@ -7,17 +7,17 @@ use Exception;
 
 abstract class Controller
 {
-   // protected $view;
+    protected $view;
 
     public function __construct()
     {
-       // $this->view = new View();
+        $this->view = new View();
     }
 
     public function showView($title, $data = [])
     {
         try {
-          //  $this->view->render($title, $data);
+            $this->view->render($title, $data);
         }
         catch (Exception $e)
         {
