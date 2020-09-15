@@ -10,19 +10,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dfb40c1c-e73a-416e-ad30-a5320cfe2c14" name="Default Changelist" comment="Реализовано подключение шаблона + Index view.&#10;&#10;Обнаружена проблема с маршрутизацией - необходимо решить">
+    <list default="true" id="dfb40c1c-e73a-416e-ad30-a5320cfe2c14" name="Default Changelist" comment="11.09.2020 - Остался вывод PDF&#10;&#10;Реализован:&#10;* вывод списка книг по названию&#10;* вывод списка авторов&#10;* вывод списка книг, принадлежащих выбранному автору&#10;* решена пролема с маршрутизацией&#10;* реализован вызов определенного метода определенного контроллера из View по ссылкам&#10;* вывод список реализован с использованием ссылок">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b/storage_v2/_src_/database/bookshelf_db.nKzHPw/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b/storage_v2/_src_/database/bookshelf_db.nKzHPw/schema/dbo.sYMBAA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/test_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/test_project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/classes/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/classes/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/classes/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/classes/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Book.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/Read.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Read.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/style/css/navbar-top-fixed.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/style/css/style.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +141,8 @@
       <workItem from="1599404048121" duration="27731000" />
       <workItem from="1599679803592" duration="3261000" />
       <workItem from="1599730926633" duration="457000" />
-      <workItem from="1599736566384" duration="11039000" />
+      <workItem from="1599736566384" duration="22283000" />
+      <workItem from="1600078452036" duration="10961000" />
     </task>
     <task id="LOCAL-00001" summary="Created a new project&#10;Created a .htaccess file&#10;Connected Apache&#10;Initiated Composer">
       <created>1597966450286</created>
@@ -192,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598906286988</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="11.09.2020 - Остался вывод PDF&#10;&#10;Реализован:&#10;* вывод списка книг по названию&#10;* вывод списка авторов&#10;* вывод списка книг, принадлежащих выбранному автору&#10;* решена пролема с маршрутизацией&#10;* реализован вызов определенного метода определенного контроллера из View по ссылкам&#10;* вывод список реализован с использованием ссылок">
+      <created>1599847186122</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1599847186122</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -217,7 +225,8 @@
     <MESSAGE value="Router -&gt; Настроена работа маршрутизатора, с использованием регулярных выражений. Теперь работает исправно.&#10;Создан статический класс App - локатор служб - запускает приложение, хранит в себе подключение к бд и рутер. Теперь можно получать данных из БД в любом месте программы.&#10;Теперь отсутствуют поля подключения в контроллерах!&#10;Создан config.php - храняться данные для подключения к БД&#10;Db-&gt;реализовано получение данных в кодировке utf-8&#10;Контроллеры:&#10;MainController -&gt; Подкорректированы методы index, getAuthorList, дополнен метод getBooksByAuthor&#10;BookController -&gt; реализован метод Read - отображение содержимого конкретной книги&#10;Модели:&#10;во всех моделях обращение к базе реализовано через класс App&#10;Book-&gt;реализован метод получения списка книг определенного автора - getBooksByAuthor&#10;Author-&gt;реализован метод получения имени по Id" />
     <MESSAGE value="Добавлен JQuery и Bootstrap&#10;Создан абстрактный класс Controller и метод отображения представления, реализованно наследование его другими контроллерами&#10;&#10;Дополнен класс View - конструктор и рендер&#10;&#10;Попытка реализовать layout и index view. Передача $content в layout - не удается." />
     <MESSAGE value="Реализовано подключение шаблона + Index view.&#10;&#10;Обнаружена проблема с маршрутизацией - необходимо решить" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализовано подключение шаблона + Index view.&#10;&#10;Обнаружена проблема с маршрутизацией - необходимо решить" />
+    <MESSAGE value="11.09.2020 - Остался вывод PDF&#10;&#10;Реализован:&#10;* вывод списка книг по названию&#10;* вывод списка авторов&#10;* вывод списка книг, принадлежащих выбранному автору&#10;* решена пролема с маршрутизацией&#10;* реализован вызов определенного метода определенного контроллера из View по ссылкам&#10;* вывод список реализован с использованием ссылок" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.09.2020 - Остался вывод PDF&#10;&#10;Реализован:&#10;* вывод списка книг по названию&#10;* вывод списка авторов&#10;* вывод списка книг, принадлежащих выбранному автору&#10;* решена пролема с маршрутизацией&#10;* реализован вызов определенного метода определенного контроллера из View по ссылкам&#10;* вывод список реализован с использованием ссылок" />
   </component>
   <component name="WindowStateProjectService">
     <state x="278" y="38" key="#CLI_Interpreters" timestamp="1599737022722">

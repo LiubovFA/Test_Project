@@ -37,9 +37,36 @@ class Book
                                             inner join Authorship A on Book.Id_book = A.Id_book
                                             inner join Author A2 on A.Id_author = A2.Id_author
                                             Where A.Id_book = ?');
+       $array_data = array();
+
        if ($data->execute([$Id]))
        {
-           return $data->fetchAll(PDO::FETCH_ASSOC);
+           $data->bindColumn('Id_book', $Id_book);
+           $data->bindColumn('Name', $book_name);
+           $data->bindColumn('Full_name', $author_name);
+           $data->bindColumn('Content', $content, PDO::PARAM_LOB);
+
+           $return_data = $data->fetchAll(PDO::FETCH_ASSOC);
+
+           return $return_data;
+          /* $i = 0;
+           while ($data->fetch(PDO::FETCH_BOUND))
+           {
+
+               var_dump($data);
+              // echo $data['Id_book']."<br>";
+               extract($data);
+               $array_data[$i] = array('Id_book' => $Id_book,
+                                       'Name' => $book_name,
+                                       'Full_name' => $author_name,
+                                       'Content' => $content);
+           }
+
+           //$data->fetchAll(PDO::FETCH_BOUND);
+
+           echo "количество строк в array data: ".count($array_data)."<br>";
+
+           return $array_data;*/
        }
        else return null;
     }
@@ -50,9 +77,9 @@ class Book
 
         $data = App::$db->getConnection()->prepare('SELECT Id_book, Name from Book');
 
-        $type = null;
+       /* $type = null;
         $content = null;
-        $id = null;
+        $id = null;*/
         /*if ($data->execute())
         {
             $data->bindColumn(1, $id, PDO::PARAM_INT);
@@ -74,7 +101,7 @@ class Book
 
     public function getBooksByAuthor(int $Id)
     {
-        $query_books = App::$db->getConnection()->prepare('select Book.Id_book, Book.Name, Book.Content from Book
+        $query_books = App::$db->getConnection()->prepare('select Book.Id_book, Book.Name from Book
                                                     inner join Authorship A on Book.Id_book = A.Id_book
                                                     where A.Id_author = ?');
         if( $query_books->execute([$Id]))
