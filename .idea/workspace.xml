@@ -10,7 +10,12 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dfb40c1c-e73a-416e-ad30-a5320cfe2c14" name="Default Changelist" comment="15.09.2020&#10;&#10;Реализован:&#10;* вывод pdf через тэг &lt;object&gt;&#10;* изменены представления Index, Read и layout&#10;* подключен bootstrap&#10;* реализовано офоромление с использованием bootstrap" />
+    <list default="true" id="dfb40c1c-e73a-416e-ad30-a5320cfe2c14" name="Default Changelist" comment="15.09.2020&#10;&#10;Реализован:&#10;* вывод pdf через тэг &lt;object&gt;&#10;* изменены представления Index, Read и layout&#10;* подключен bootstrap&#10;* реализовано офоромление с использованием bootstrap">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layout.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,7 +134,8 @@
       <workItem from="1599679803592" duration="3261000" />
       <workItem from="1599730926633" duration="457000" />
       <workItem from="1599736566384" duration="22283000" />
-      <workItem from="1600078452036" duration="11330000" />
+      <workItem from="1600078452036" duration="11923000" />
+      <workItem from="1601035490937" duration="2053000" />
     </task>
     <task id="LOCAL-00001" summary="Created a new project&#10;Created a .htaccess file&#10;Connected Apache&#10;Initiated Composer">
       <created>1597966450286</created>

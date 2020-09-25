@@ -13,6 +13,8 @@
     </style>
 </head>
 <body>
+<!--<a class="dropdown-item" href="http://localhost/test_project/authors">По автору</a>
+<a class="dropdown-item" href="http://localhost/test_project">По названию</a>-->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="http://localhost/test_project">BOOK_shelf</a>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">

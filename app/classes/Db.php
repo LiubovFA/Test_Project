@@ -20,25 +20,26 @@ class Db
         try
         {
             $result_connect = new PDO($dns, "", "");
+            $result_connect->exec('set names utf8');
 
         }
         catch (PdoException $ex)
         {
             echo $ex->getLine().' + '.$ex->getMessage( )." + ". (int)$ex->getCode( );
+            exit();
         }
 
         $this->connection = $result_connect;
-        $this->connection->exec('set names utf8');
         //echo 'DB is connected! <br>';
     }
 
-    public function disconnect()
+    /*public function disconnect()
     {
         if ($this->connection instanceof PDO)
         {
-            $db = null;
+            $this->connection = null;
         }
-    }
+    }*/
 
     public function getConnection()
     {
