@@ -11,49 +11,16 @@ use test_project\app\models\Author;
 
 class MainController extends Controller
 {
-    /*public function __construct()
-    {
-        self::$view = new View();
-       /* $db = new Db();
-        try
-        {
-            $this->db_connection = $db->connect();
-        }
-        catch (\ErrorException $e)
-        {
-            echo $e->getMessage();
-        }
-    }*/
-
     public function index()
     {
         try {
             $book = new Book();
 
-            $books = $book->getAll();
+            $books = $book->getFullBooksInfo();
 
             $this->view->setView("Index", "books");
 
             $this->showView('Главная страница', $books);
-
-            //   View::render('Index.php', $books);
-
-           // echo '<a href="/test_project/authors">По автору</a>';
-
-           /* echo '<br> Всего книг:'.count($books);
-
-            for ($row = 0; $row < count($books); $row++)
-            {
-                echo "<p><b>Book Id".$books[$row]['Id_book']."</b></p>";
-                echo "<ul>";
-                    echo $books[$row]['Name'].'<br>';
-                echo "</ul>";
-            }
-            echo '<br>';*/
-
-            //self::showView('Index', $books);
-            //$this->view
-          //  View::render('Index.php');
         }
         catch (Exception $exception)
         {
@@ -97,7 +64,7 @@ class MainController extends Controller
 
             $books = $book->getBooksByAuthor($Id);
 
-            $this->view->setView("Index", "authorBooks");
+            $this->view->setView("Index", "authorbooks");
 
             $this->showView('Главная страница', $books);
 
@@ -115,6 +82,75 @@ class MainController extends Controller
         catch(Exception $exc)
         {
             echo $exc->getCode().' + '.$exc->getMessage();
+        }
+    }
+
+    public function search()
+    {
+        $this->view->setView("Index", "search");
+
+        $this->showView('Поиск книги');
+    }
+
+    public function searchBook ()
+    {
+        if (isset($_POST['submit']))
+        {
+            if ($_POST['request'] != "")
+            {
+                $request = $_POST['request'];
+
+                switch ($_POST['searchBy']) {
+                    case 'book': //поиск по названию
+                    {
+                        try {
+                            $book = new Book();
+                            $data = $book->searchByName($request);
+                            $this->view->setView("Index", "search_book");
+
+                            if (is_null($data) || empty($data))
+                            {
+                                $this->showView('Главная страница', "Книга не найдена!");
+                            }
+                            else $this->showView('Главная страница', $data);
+                        }
+                        catch (Exception $ex)
+                        {
+                            echo $ex->getCode().' + '.$ex->getMessage();
+                        }
+                        break;
+                    }
+                    case 'author': //поиск по автору
+                    {
+                        try {
+
+                            $author = new Author();
+                            $data = $author->search($request);
+                            $this->view->setView("Index", "search_author");
+
+                            if (is_null($data) || empty($data))
+                            {
+                                $this->showView('Главная страница', "Автор не найден!");
+                            }
+                            else {
+                                $book = new Book();
+                                $data = $book->searchByAuthor($data[0]['Id_author']);
+                                $this->showView('Главная страница', $data);
+                            }
+                        }
+                        catch (Exception $ex)
+                        {
+                            echo $ex->getCode().' + '.$ex->getMessage();
+                        }
+                        break;
+                    }
+                }
+                exit();
+            }
+            else {
+                $this->view->setView("Index", "search");
+                $this->showView('Главная страница', "Введите данные для поиска!");
+            }
         }
     }
 }

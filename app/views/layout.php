@@ -4,13 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
-    <title><?php echo $title?></title>
+    <link rel="stylesheet" type="text/css" href="../views/css/style.css">
     <style>
         li {
             padding: 0; /* Убираем поля */
             margin-left: 20px; /* Отступ слева */
         }
-    </style>
+        form {
+            margin-left: 20px; /* Отступ слева */
+        }
+
+        button {
+            margin-top: 10px;
+        }
+
+        input {
+            margin-top: 10px;
+        }
+    </style>>
+    <title><?php echo $title?></title>
 </head>
 <body>
 <!--<a class="dropdown-item" href="http://localhost/test_project/authors">По автору</a>
@@ -19,13 +31,14 @@
     <a class="navbar-brand" href="http://localhost/test_project">BOOK_shelf</a>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Список книг</a>
+            <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Показать</a>
             <li class="nav-item dropdown">
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="http://localhost/test_project/authors">По автору</a>
-                    <a class="dropdown-item" href="http://localhost/test_project">По названию</a>
+                    <a class="dropdown-item" href="http://localhost/test_project/authors">Список авторов</a>
+                    <a class="dropdown-item" href="http://localhost/test_project">Список книг</a>
                 </div>
             </li>
+            <a class="nav-link" href="http://localhost/test_project/search">Поиск книги</a>>
         </ul>
     </div>
 </nav>
@@ -33,5 +46,6 @@
 <script src="../../vendor/components/jquery/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="../../vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

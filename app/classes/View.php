@@ -22,7 +22,7 @@ class View
         $this->dataType = $type;
     }
 
-    public function render ($title, array $data = [])
+    public function render ($title, $data = [])
     {
         // Получаем путь, где лежат все представления
         $fullPath = 'app/views/' . $this->viewName. '.php';

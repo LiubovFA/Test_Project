@@ -11,7 +11,9 @@ class Router
         "#^/test_project/authors$#" => ['controller' => "Main", 'action' => "getAuthorList", 'arg' => ''],
         "#^/test_project/authors/([0-9]+)$#" => ['controller'=> "Main", 'action' => 'getBooksByAuthor', 'arg' => ''],
         "#^/test_project/books$#" => ['controller' => "Main", 'action' => 'index', 'arg' => ''],
-        "#^/test_project/books/([0-9]+)$#" => ['controller'=> "Book", 'action' => "Read", 'arg' => '']
+        "#^/test_project/books/([0-9]+)$#" => ['controller'=> "Book", 'action' => "Read", 'arg' => ''],
+        "#^/test_project/searchbook$#" => ['controller'=> "Main", 'action' => "searchBook", 'arg' => ''],
+        "#^/test_project/search$#" => ['controller' => "Main", 'action' => "search", 'arg' => '']
     ];
 
     private $controller = 'Main';
