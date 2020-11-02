@@ -11,18 +11,20 @@ class Router
         "#^/test_project/authors$#" => ['controller' => "Main", 'action' => "getAuthorList", 'arg' => ''],
         "#^/test_project/authors/([0-9]+)$#" => ['controller'=> "Main", 'action' => 'getBooksByAuthor', 'arg' => ''],
         "#^/test_project/books$#" => ['controller' => "Main", 'action' => 'index', 'arg' => ''],
-        "#^/test_project/books/([0-9]+)$#" => ['controller'=> "Book", 'action' => "Read", 'arg' => '']
+        "#^/test_project/books/([0-9]+)$#" => ['controller'=> "Book", 'action' => "Read", 'arg' => ''],
+        "#^/test_project/searchbook$#" => ['controller'=> "Main", 'action' => "searchBook", 'arg' => ''],
+        "#^/test_project/search$#" => ['controller' => "Main", 'action' => "search", 'arg' => '']
     ];
 
-    private $controller;
-    private $action;
-    private $arg;
+    private $controller = 'Main';
+    private $action = 'index';
+    private $arg = '';
 
     public function __construct()
     {
-       $this->controller = 'Main';
+       /*$this->controller = 'Main';
        $this->action = 'index';
-       $this->arg = '';
+       $this->arg = '';*/
     }
 
     public function start()
@@ -47,7 +49,7 @@ class Router
 
                 //print_r($path_parts);
 
-                if (count($path_parts)>2) {
+                if (array_key_exists(3, $path_parts)) {
                     $arg = $path_parts[3];
                     $ctr_obj->$action($arg);
                 }

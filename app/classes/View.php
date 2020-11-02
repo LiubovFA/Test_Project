@@ -9,8 +9,8 @@ class View
     private $layout = 'app/views/layout.php';
     public $viewName;
     public $dataType;
-    private $path;
-    private $args = [];
+   // private $path;
+   // private $args = [];
 
     public function __construct()
     {
@@ -22,7 +22,7 @@ class View
         $this->dataType = $type;
     }
 
-    public function render ($title, array $data = [])
+    public function render ($title, $data = [])
     {
         // Получаем путь, где лежат все представления
         $fullPath = 'app/views/' . $this->viewName. '.php';
@@ -38,28 +38,5 @@ class View
             $content = ob_get_clean();
             include $this->layout;
         }
-
-        // print_r($data);
-         // Если данные были переданы, то из элементов массива
-         // создаются переменные, которые будут доступны в представлении
-         /*if (!empty($data))
-         {
-             foreach ($data as $key => $value)
-             {
-                 $$key = $value;
-             }
-         }*/
-       /* if($data != null)
-        {
-            $this->args = $data;
-        }
-
-         include $fullPath;*/
-
-       //  $content = ob_get_clean();
-         //echo '<br>';
-        // print_r($data);
-
-         //include $this->layout;
     }
 }

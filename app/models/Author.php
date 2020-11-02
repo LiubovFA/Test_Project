@@ -23,6 +23,7 @@ class Author
     public function getNameById(int $id)
     {
         $name = App::$db->getConnection()->prepare('Select Full_name from Author where Id_author = ?');
+
         if ($name->execute([$id]))
         {
             return $name->fetch(PDO::FETCH_ASSOC);
@@ -34,5 +35,16 @@ class Author
         $data = App::$db->getConnection()->query('SELECT * from Author')->fetchAll(PDO::FETCH_ASSOC);
 
         return $data;
+    }
+
+    public function search (string $name)
+    {
+        $query = App::$db->getConnection()->prepare('select Author.Id_author, Author.Full_name from Author
+                                                    where Full_name = ?');
+        if ($query->execute([$name]))
+        {
+            return $query->fetchAll(PDO::FETCH_ASSOC);
+        }
+        else return null;
     }
 }
