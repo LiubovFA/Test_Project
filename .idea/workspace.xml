@@ -10,15 +10,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dfb40c1c-e73a-416e-ad30-a5320cfe2c14" name="Default Changelist" comment="в классе Db подправила конструктор.&#10;в Router сделала проверку наличия ключа 3.">
+    <list default="true" id="dfb40c1c-e73a-416e-ad30-a5320cfe2c14" name="Default Changelist" comment="Создана форма поиска книг по названию и по автору.&#10;Реализовано отображение результатов поиск в соответствии с запросом.&#10;Изменено отображение списков книг и авторов.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/classes/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/classes/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Author.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Author.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layout.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +138,7 @@
       <workItem from="1600078452036" duration="11923000" />
       <workItem from="1601035490937" duration="3192000" />
       <workItem from="1601185466035" duration="7696000" />
-      <workItem from="1601282836252" duration="37283000" />
+      <workItem from="1601282836252" duration="38329000" />
     </task>
     <task id="LOCAL-00001" summary="Created a new project&#10;Created a .htaccess file&#10;Connected Apache&#10;Initiated Composer">
       <created>1597966450286</created>
@@ -217,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601038628696</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Создана форма поиска книг по названию и по автору.&#10;Реализовано отображение результатов поиск в соответствии с запросом.&#10;Изменено отображение списков книг и авторов.">
+      <created>1601478099799</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1601478099799</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,7 +245,8 @@
     <MESSAGE value="11.09.2020 - Остался вывод PDF&#10;&#10;Реализован:&#10;* вывод списка книг по названию&#10;* вывод списка авторов&#10;* вывод списка книг, принадлежащих выбранному автору&#10;* решена пролема с маршрутизацией&#10;* реализован вызов определенного метода определенного контроллера из View по ссылкам&#10;* вывод список реализован с использованием ссылок" />
     <MESSAGE value="15.09.2020&#10;&#10;Реализован:&#10;* вывод pdf через тэг &lt;object&gt;&#10;* изменены представления Index, Read и layout&#10;* подключен bootstrap&#10;* реализовано офоромление с использованием bootstrap" />
     <MESSAGE value="в классе Db подправила конструктор.&#10;в Router сделала проверку наличия ключа 3." />
-    <option name="LAST_COMMIT_MESSAGE" value="в классе Db подправила конструктор.&#10;в Router сделала проверку наличия ключа 3." />
+    <MESSAGE value="Создана форма поиска книг по названию и по автору.&#10;Реализовано отображение результатов поиск в соответствии с запросом.&#10;Изменено отображение списков книг и авторов." />
+    <option name="LAST_COMMIT_MESSAGE" value="Создана форма поиска книг по названию и по автору.&#10;Реализовано отображение результатов поиск в соответствии с запросом.&#10;Изменено отображение списков книг и авторов." />
   </component>
   <component name="WindowStateProjectService">
     <state x="278" y="38" key="#CLI_Interpreters" timestamp="1599737022722">
@@ -337,10 +338,10 @@
     </state>
     <state x="226" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1601283139460" />
     <state x="494" y="39" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598462087228" />
-    <state x="290" y="139" key="Vcs.Push.Dialog.v2" timestamp="1601038641499">
+    <state x="290" y="139" key="Vcs.Push.Dialog.v2" timestamp="1601482121306">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="290" y="139" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601038641499" />
+    <state x="290" y="139" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601482121306" />
     <state x="326" y="157" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598790035762" />
     <state x="555" y="206" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1599405923461">
       <screen x="0" y="0" width="1366" height="728" />
