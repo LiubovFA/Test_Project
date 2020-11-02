@@ -4,24 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../../vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../views/css/style.css">
-    <style>
-        li {
-            padding: 0; /* Убираем поля */
-            margin-left: 20px; /* Отступ слева */
-        }
-        form {
-            margin-left: 20px; /* Отступ слева */
-        }
-
-        button {
-            margin-top: 10px;
-        }
-
-        input {
-            margin-top: 10px;
-        }
-    </style>>
+    <link rel="stylesheet" type="text/css" href="/app/views/css/style.css" title="default styles">
     <title><?php echo $title?></title>
 </head>
 <body>
@@ -43,9 +26,9 @@
     </div>
 </nav>
 <?php echo $content; ?>
+
 <script src="../../vendor/components/jquery/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="../../vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="js/script.js"></script>
 </body>
 </html>

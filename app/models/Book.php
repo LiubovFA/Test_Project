@@ -36,7 +36,7 @@ class Book
                                             inner join Authorship A on Book.Id_book = A.Id_book
                                             inner join Author A2 on A.Id_author = A2.Id_author
                                             Where A.Id_book = ? ORDER BY Book.Name');
-       $array_data = array();
+      // $array_data = array();
 
        if ($data->execute([$Id]))
        {
@@ -128,7 +128,7 @@ class Book
         $query = App::$db->getConnection()->prepare('select Book.Id_book, Book.Name, A2.Full_name from Book
                                                     inner join Authorship A on Book.Id_book = A.Id_book
                                                     inner join Author A2 on A2.Id_author = A.Id_author
-                                                    where Name = ?');
+                                                    where CONTAINS (Name, ?)');
         if ($query->execute([$name]))
         {
             return $query->fetchAll(PDO::FETCH_ASSOC);

@@ -21,7 +21,6 @@ class Db
         {
             $result_connect = new PDO($dns, "", "");
             $result_connect->exec('set names utf8');
-
         }
         catch (PdoException $ex)
         {

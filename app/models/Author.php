@@ -37,10 +37,10 @@ class Author
         return $data;
     }
 
-    public function search (string $name)
+    public function searchAuthor (string $name)
     {
         $query = App::$db->getConnection()->prepare('select Author.Id_author, Author.Full_name from Author
-                                                    where Full_name = ?');
+                                                    where Contains (Full_name, ?)');
         if ($query->execute([$name]))
         {
             return $query->fetchAll(PDO::FETCH_ASSOC);

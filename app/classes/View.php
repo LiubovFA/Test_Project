@@ -25,7 +25,7 @@ class View
     public function render ($title, $data = [])
     {
         // Получаем путь, где лежат все представления
-        $fullPath = 'app/views/' . $this->viewName. '.php';
+        $fullPath = 'app/views/'.$this->viewName.'.php';
 
         $type = $this->dataType;
         // Если представление не было найдено, выбрасываем исключение

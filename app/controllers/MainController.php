@@ -38,17 +38,6 @@ class MainController extends Controller
             $this->view->setView("Index", "authors");
 
             $this->showView('Главная страница', $authors);
-
-            /*for ($row = 0; $row < count($authors); $row++)
-            {
-                echo "<p><b> Author Id".$authors[$row]['Id_author']."</b></p>";
-                echo "<ul>";
-                echo $authors[$row]['Full_name'].'<br>';
-                echo "</ul>";
-            }
-            echo '<br>';*/
-
-            //  View::render('Index.php');
         }
         catch (Exception $exception)
         {
@@ -67,17 +56,6 @@ class MainController extends Controller
             $this->view->setView("Index", "authorbooks");
 
             $this->showView('Главная страница', $books);
-
-            /*
-            for ($row = 0; $row < count($books); $row++)
-            {
-                echo "<p><b>Book Id".$books[$row]['Id_book']."</b></p>";
-                echo "<ul>";
-                echo $books[$row]['Name'].'<br>';
-                echo "</ul>";
-            }*/
-
-           // self::showView('Index', $books);
         }
         catch(Exception $exc)
         {

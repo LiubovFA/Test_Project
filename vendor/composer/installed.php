@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '2e2ec24e138306cc23f3519d237bd5382a9ee8d2',
+    'reference' => '3b6f1e577c2d2af80d6c0c85a953278b73fda33a',
     'name' => 'test_project/app',
   ),
   'versions' => 
@@ -27,22 +27,22 @@
       'aliases' => 
       array (
       ),
-      'reference' => '2e2ec24e138306cc23f3519d237bd5382a9ee8d2',
+      'reference' => '3b6f1e577c2d2af80d6c0c85a953278b73fda33a',
     ),
     'twbs/bootstrap' => 
     array (
-      'pretty_version' => 'v4.5.2',
-      'version' => '4.5.2.0',
+      'pretty_version' => 'v4.5.3',
+      'version' => '4.5.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => '5f2480a90ab911babc53039835fe78c6fc12646d',
+      'reference' => 'a716fb03f965dc0846df479e14388b1b4b93d7ce',
     ),
     'twitter/bootstrap' => 
     array (
       'replaced' => 
       array (
-        0 => 'v4.5.2',
+        0 => 'v4.5.3',
       ),
     ),
   ),

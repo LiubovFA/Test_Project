@@ -1,0 +1,93 @@
+li {
+    padding:0;
+    margin-left:20px;
+}
+
+form {
+    margin-left:20px;
+}
+
+button {
+    background-color: #343a40;
+    border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+    width: 75px;
+}
+
+input
+{
+    background-color: #343a40;
+    border: none;
+    color: white;
+    text-align: left;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+#author_name
+{
+    margin-left: 20px;
+}
+
+#pager-div {
+    background-color: rgb(219 229 239);
+    position: absolute;
+    padding: 10px;
+    margin-left: 20px;
+    width: 370px;
+    height: 50px;
+    border-radius: 4px;
+}
+
+#currentBook {
+    color: white;
+    float:right;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+#pageNum {
+    margin-top: 5px;
+    width: 50px;
+}
+
+#pages {
+    padding-right: 15px;
+}
+
+#toolbar {
+    background-color: #515b65;
+    position: relative;
+    margin: auto;
+    height: 60px;
+}
+
+#viewport
+{
+    background-color: gainsboro;
+    display:flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#search_button, #search_input
+{
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+/*#my\ canvas
+{
+    display:block;
+    margin-left: auto;
+    margin-right:auto;
+}*/

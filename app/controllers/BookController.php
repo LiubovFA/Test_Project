@@ -4,7 +4,6 @@ namespace test_project\app\controllers;
 
 use test_project\app\classes\Controller;
 use test_project\app\models\Book;
-use test_project\app\classes\View;
 
 class BookController extends Controller
 {
