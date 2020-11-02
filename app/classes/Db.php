@@ -13,19 +13,14 @@ class Db
 
     public function __construct()
     {
-        if($this->connection instanceof PDO && $this->connection != null)
-        {
-            return true;
-        }
-
         $dns = "sqlsrv:Server=".DB_HOST.";Database=".DB_NAME;
 
         $result_connect = null;
+
         try
         {
-            $result_connect = new PDO($dns, DB_USER, DB_PASS);
-            // $result_connect = odbc_connect("Driver={SQL Server};Server=".$this->connection["host"].";Database=".$this->connection["db_name"],$this->connection["user"], $this->connection["password"]);
-            // $result_connect = new PDO("sqlsrv::Server=localhost;Database=".$this->connection["db_name"], $this->connection["user"], $this->connection["password"]);
+            $result_connect = new PDO($dns, "", "");
+
         }
         catch (PdoException $ex)
         {
@@ -34,7 +29,7 @@ class Db
 
         $this->connection = $result_connect;
         $this->connection->exec('set names utf8');
-        echo ' DB is connected';
+        //echo 'DB is connected! <br>';
     }
 
     public function disconnect()

@@ -3,32 +3,41 @@
 namespace test_project\app\classes;
 
 use ErrorException;
-use function Composer\Autoload\includeFile;
 
 class View
 {
-    private $layout;
-    public $view;
+    private $layout = 'app/views/layout.php';
+    public $viewName;
+    public $dataType;
+    private $path;
     private $args = [];
 
-    public function __construct($view = "")
+    public function __construct()
     {
-        $this->view = $view;
-        $this->layout = $_SERVER['DOCUMENT_ROOT'].'/app/views/layout.php';
     }
 
-    public function render (array $data = [])
+    public function setView($view, $type = '')
     {
-        //echo '<br>'.$path.'<br>';
-        // Получаем путь, где лежат все представления
-        $fullPath = $_SERVER['DOCUMENT_ROOT'].'/app/views/' . $this->view. '.php';
+        $this->viewName = $view;
+        $this->dataType = $type;
+    }
 
-       // ob_start();
-        //echo '<br>'.$fullPath.'<br>';
-         // Если представление не было найдено, выбрасываем исключение
-         if (!file_exists($fullPath)) {
-             throw new ErrorException('view cannot be found');
-         }
+    public function render ($title, array $data = [])
+    {
+        // Получаем путь, где лежат все представления
+        $fullPath = 'app/views/' . $this->viewName. '.php';
+
+        $type = $this->dataType;
+        // Если представление не было найдено, выбрасываем исключение
+        if (!file_exists($fullPath)) {
+            throw new ErrorException('View cannot be found');
+        }
+        else {
+            ob_start();
+            include $fullPath;
+            $content = ob_get_clean();
+            include $this->layout;
+        }
 
         // print_r($data);
          // Если данные были переданы, то из элементов массива
@@ -40,12 +49,12 @@ class View
                  $$key = $value;
              }
          }*/
-        if($data != null)
+       /* if($data != null)
         {
             $this->args = $data;
         }
 
-         include $fullPath;
+         include $fullPath;*/
 
        //  $content = ob_get_clean();
          //echo '<br>';
