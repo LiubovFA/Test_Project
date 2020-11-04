@@ -29,50 +29,75 @@ if (!empty($data)) {
         if ($search)
             echo "<p style='margin-left: 20px'>Вы искали:</p>";
 
-        if ($type == "authors") {
-            foreach ($data as $row) {
+        //вывод списка авторов
+        if ($type == "authors")
+        {
+            echo "<div class='list'>";
+
+            foreach ($data as $row)
+            {
                 $id = $row['Id_author'];
                 echo "<li>";
                 echo "<a href=\"http://localhost/test_project/authors/$id\">";
                 echo $row['Full_name'];
-                echo "</a></p></li>";
+                echo "</a></li>";
             }
-        } else if ($type == "search_author") {
+            echo "</div>";
+        }
+        //вывод результатов поиска книг по автору
+        else if ($type == "search_author")
+        {
             $last_key = array_key_last($data);
 
-            for ($i = 0; $i <= $last_key; $i++) {
-                if ($i == 0) {
-                    echo "<li>" . $data[$i]['Full_name'] . ":<ul>
+            for ($i = 0; $i <= $last_key; $i++)
+            {
+                if ($i == 0)
+                {
+                    echo "<p><li>" . $data[$i]['Full_name'] . ":<div class='list'><ul>
                             <li><a href='\"http://localhost/test_project/books/" . $data[$i]['Id_book'] . "\"'>" . $data[$i]['Name'] . "</a></li>";
-                } else {
-                    if ($data[$i]['Id_author'] != $data[$i - 1]['Id_author']) {
-                        echo "</ul></li>";
-                        echo "<li>" . $data[$i]['Full_name'] . ":<ul>
+                }
+                else
+                {
+                    if ($data[$i]['Id_author'] != $data[$i - 1]['Id_author'])
+                    {
+                        echo "</ul></div></li></p>";
+                        echo "<p><li>" . $data[$i]['Full_name'] . ":<div class='list'>><ul>
                                 <li><a href='\"http://localhost/test_project/books/" . $data[$i]['Id_book'] . "\"'>" . $data[$i]['Name'] . "</a>></li>";
-                    } else {
+                    }
+                    else
+                    {
                         echo "<li><a href=\"http://localhost/test_project/books/" . $data[$i]['Id_book'] . "\">" . $data[$i]['Name'] . "</a></li>";
                     }
                 }
             }
-            echo "</ul></li>";
-        } else if ($type == "books" || ($type == "search_book") || ($type == "authorbooks")) {
-            if ($type == "authorbooks") {
+            echo "</ul></div></li></p>";
+        }
+        //вывод списка книг или книг конкретного автору, или результатов поиска книги по названию
+        else if ($type == "books" || ($type == "search_book") || ($type == "authorbooks"))
+        {
+            if ($type == "authorbooks")
+            {
                 echo "<label id='author_name'>" . $data[0]['Full_name'] . ":</label><br>";
+
+                echo "<div class='list'>";
 
                 foreach ($data as $row) {
                     $id = $row['Id_book'];
                     echo "<li>";
                     echo "<a href=\"http://localhost/test_project/books/$id\">";
                     echo '<q>' . $row['Name'] . '</q>';
+
                     if ($type != "authorbooks")
                         echo " - " . $row['Full_name'];
-                    echo "</a></p></li>";
+                    echo "</a></li>";
                 }
+                echo "</div>";
             }
             else
             {
                 $last_key = array_key_last($data);
 
+                echo "<div class='list'>";
                 for ($i = 0; $i <= $last_key; $i++)
                 {
                     if ($i == 0)
@@ -91,7 +116,7 @@ if (!empty($data)) {
                         }
                         else
                         {
-                            echo "</a></p></li>";
+                            echo "</a></li>";
                             $id = $data[$i]['Id_book'];
                             echo "<li>";
                             echo "<a href=\"http://localhost/test_project/books/$id\">";
@@ -100,7 +125,7 @@ if (!empty($data)) {
                         }
                     }
                 }
-                echo "</a></p></li>";
+                echo "</a></li></div>";
             }
         }
     }

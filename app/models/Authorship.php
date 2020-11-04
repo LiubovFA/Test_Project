@@ -29,7 +29,10 @@ class Authorship
 
     public function getBooksByAuthor(int $id_author)
     {
-        $request = App::$db->getConnection()->prepare('Select Id_book from Authorship WHERE Id_author = ?');
+        $statement = 'Select Id_book from Authorship WHERE Id_author = ?';
+
+        $request = App::$db->getConnection()->prepare($statement);
+
         if ($request->execute([$id_author]))
             return $request->fetchALL(PDO::FETCH_ASSOC);
         else

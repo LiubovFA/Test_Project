@@ -32,10 +32,10 @@
 
 <script type="text/javascript">
     //подготовка данных и отображение первой страницы
-    window.onload = function () {
+    window.onload = function ()
+    {
         init("<?php echo base64_encode($data[0]['Content'])?>");
         render(1);
         // rendering("<!?php echo base64_encode($data[0]['Content'])?>");
     }
 </script>
-<!object data="data:application/pdf;base64,<!?php echo base64_encode($data[0]['Content'])?>" type="application/pdf" style="min-height:100vh;width:100%"">Документ для чтения:<!/object>

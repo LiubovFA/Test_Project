@@ -51,7 +51,7 @@ function render(num)
                 pdf.getPage(pageNum).then(
                     function (page) {
                         console.log("loading page");
-                        var scale = 1;
+                        var scale = 1.25;
                         var viewport = page.getViewport( { scale: scale } );
 
                         // Prepare canvas using PDF page dimensions
@@ -125,7 +125,9 @@ document.getElementById("pageNum").onkeydown = function (event)
     if (e === "Enter") {
         let showPage = parseInt(document.getElementById("pageNum").value);
 
-        if (showPage !== currentPage && (showPage > 0 && showPage <= maxPage))
+        if (showPage <= 0 || showPage > maxPage)
+            document.getElementById("pageNum").value = currentPage;
+        else if (showPage !== currentPage)
         {
             currentPage = showPage;
             render(currentPage);

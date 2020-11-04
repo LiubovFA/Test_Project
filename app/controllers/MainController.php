@@ -20,7 +20,7 @@ class MainController extends Controller
 
             $this->view->setView("Index", "books");
 
-            $this->showView('Главная страница', $books);
+            $this->showView('Список книг', $books);
         }
         catch (Exception $exception)
         {
@@ -37,7 +37,7 @@ class MainController extends Controller
 
             $this->view->setView("Index", "authors");
 
-            $this->showView('Главная страница', $authors);
+            $this->showView('Список авторов', $authors);
         }
         catch (Exception $exception)
         {
@@ -55,7 +55,7 @@ class MainController extends Controller
 
             $this->view->setView("Index", "authorbooks");
 
-            $this->showView('Главная страница', $books);
+            $this->showView('Книги автора', $books);
         }
         catch(Exception $exc)
         {
@@ -78,19 +78,22 @@ class MainController extends Controller
             {
                 $request = $_POST['request'];
 
-                switch ($_POST['searchBy']) {
+                switch ($_POST['searchBy'])
+                {
                     case 'book': //поиск по названию
                     {
-                        try {
+                        try
+                        {
                             $book = new Book();
                             $data = $book->searchByName($request);
                             $this->view->setView("Index", "search_book");
 
                             if (is_null($data) || empty($data))
                             {
-                                $this->showView('Главная страница', "Книга не найдена!");
+                                $this->showView('Поиск книги', "Книга не найдена!");
                             }
-                            else $this->showView('Главная страница', $data);
+                            else
+                                $this->showView('Поиск книги', $data);
                         }
                         catch (Exception $ex)
                         {
@@ -100,20 +103,21 @@ class MainController extends Controller
                     }
                     case 'author': //поиск по автору
                     {
-                        try {
-
+                        try
+                        {
                             $author = new Author();
-                            $data = $author->search($request);
+                            $data = $author->searchAuthor($request);
                             $this->view->setView("Index", "search_author");
 
                             if (is_null($data) || empty($data))
                             {
-                                $this->showView('Главная страница', "Автор не найден!");
+                                $this->showView('Поиск книги', "Автор не найден!");
                             }
-                            else {
+                            else
+                            {
                                 $book = new Book();
                                 $data = $book->searchByAuthor($data[0]['Id_author']);
-                                $this->showView('Главная страница', $data);
+                                $this->showView('Поиск книги', $data);
                             }
                         }
                         catch (Exception $ex)
@@ -127,7 +131,7 @@ class MainController extends Controller
             }
             else {
                 $this->view->setView("Index", "search");
-                $this->showView('Главная страница', "Введите данные для поиска!");
+                $this->showView('Поиск книги', "Введите данные для поиска!");
             }
         }
     }

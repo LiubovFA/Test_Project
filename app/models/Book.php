@@ -32,40 +32,24 @@ class Book
 
     public function getAllInfo(int $Id)
     {
-       $data = App::$db->getConnection()->prepare('Select Book.Id_book, Book.Name, A2.Full_name, Book.Content from Book
+        $statement = 'Select Book.Id_book, Book.Name, A2.Full_name, Book.Content from Book
                                             inner join Authorship A on Book.Id_book = A.Id_book
                                             inner join Author A2 on A.Id_author = A2.Id_author
-                                            Where A.Id_book = ? ORDER BY Book.Name');
+                                            Where A.Id_book = ? ORDER BY Book.Name';
+
+        $query = App::$db->getConnection()->prepare($statement);
       // $array_data = array();
 
-       if ($data->execute([$Id]))
+       if ($query->execute([$Id]))
        {
-           $data->bindColumn('Id_book', $Id_book);
-           $data->bindColumn('Name', $book_name);
-           $data->bindColumn('Full_name', $author_name);
-           $data->bindColumn('Content', $content, PDO::PARAM_LOB);
+           $query->bindColumn('Id_book', $Id_book);
+           $query->bindColumn('Name', $book_name);
+           $query->bindColumn('Full_name', $author_name);
+           $query->bindColumn('Content', $content, PDO::PARAM_LOB);
 
-           $return_data = $data->fetchAll(PDO::FETCH_ASSOC);
+           $return_data = $query->fetchAll(PDO::FETCH_ASSOC);
 
            return $return_data;
-          /* $i = 0;
-           while ($data->fetch(PDO::FETCH_BOUND))
-           {
-
-               var_dump($data);
-              // echo $data['Id_book']."<br>";
-               extract($data);
-               $array_data[$i] = array('Id_book' => $Id_book,
-                                       'Name' => $book_name,
-                                       'Full_name' => $author_name,
-                                       'Content' => $content);
-           }
-
-           //$data->fetchAll(PDO::FETCH_BOUND);
-
-           echo "количество строк в array data: ".count($array_data)."<br>";
-
-           return $array_data;*/
        }
        else return null;
     }
@@ -73,79 +57,73 @@ class Book
     public function getAll()
     {
         //$data = $this->db->query('SELECT Id_book, Name, Content from Book')->fetchAll(PDO::FETCH_UNIQUE);
+        $statement = 'SELECT Id_book, Name from Book ORDER BY Name';
 
-        $data = App::$db->getConnection()->prepare('SELECT Id_book, Name from Book ORDER BY Name');
+        $query = App::$db->getConnection()->prepare($statement);
 
-       /* $type = null;
-        $content = null;
-        $id = null;*/
-        /*if ($data->execute())
-        {
-            $data->bindColumn(1, $id, PDO::PARAM_INT);
-            $data->bindColumn(2, $type, PDO::PARAM_STR, 400);
-            $data->bindColumn(3, $content, \PDO::PARAM_LOB);
-
-            return $data->fetchAll(\PDO::FETCH_BOUND) ?
-                ["Id_book" => $id, "Name" => $type, "Content" => $content] : null;
-        } else {
-            return null;
-        }*/
-
-        if ($data->execute()) {
-            return $data->fetchAll(PDO::FETCH_BOTH);
-        }
+        if ($query->execute())
+            return $query->fetchAll(PDO::FETCH_BOTH);
         else return null;
     }
 
     public function getFullBooksInfo()
     {
-        $query_books = App::$db->getConnection()->prepare('select Book.Id_book, Book.Name, A2.Full_name from Book
+        $statement = 'select Book.Id_book, Book.Name, A2.Full_name from Book
                                                     inner join Authorship A on Book.Id_book = A.Id_book
                                                     inner join Author A2 on A.Id_author = A2.Id_author
-                                                    ORDER BY Book.Name');
-        if( $query_books->execute([]))
+                                                    ORDER BY Book.Name';
+
+        $query = App::$db->getConnection()->prepare($statement);
+
+        if( $query->execute([]))
         {
-            return $query_books->fetchAll(PDO::FETCH_ASSOC);
+            return $query->fetchAll(PDO::FETCH_ASSOC);
         }
         else return null;
     }
 
     public function getBooksByAuthor(int $Id)
     {
-        $query_books = App::$db->getConnection()->prepare('select Book.Id_book, Book.Name, A2.Full_name from Book
+        $statement = 'select Book.Id_book, Book.Name, A2.Full_name from Book
                                                     inner join Authorship A on Book.Id_book = A.Id_book
                                                     inner join Author A2 on A.Id_author = A2.Id_author
-                                                    where A.Id_author = ? ORDER BY Book.Name');
-        if( $query_books->execute([$Id]))
-        {
-            return $query_books->fetchAll(PDO::FETCH_ASSOC);
-        }
+                                                    where A.Id_author = ? ORDER BY Book.Name';
+
+        $query = App::$db->getConnection()->prepare($statement);
+        if( $query->execute([$Id]))
+            return $query->fetchAll(PDO::FETCH_ASSOC);
         else return null;
     }
 
+    //поиск книги по названию
     public function searchByName (string $name)
     {
-        $query = App::$db->getConnection()->prepare('select Book.Id_book, Book.Name, A2.Full_name from Book
+        $statement = 'select Book.Id_book, Book.Name, A2.Full_name from Book
                                                     inner join Authorship A on Book.Id_book = A.Id_book
                                                     inner join Author A2 on A2.Id_author = A.Id_author
-                                                    where CONTAINS (Name, ?)');
-        if ($query->execute([$name]))
-        {
+                                                    where CONTAINS (Name, ?)';
+
+        $arg = '"'.$name.'"';
+
+        $query = App::$db->getConnection()->prepare($statement);
+
+        if ($query->execute([$arg]))
             return $query->fetchAll(PDO::FETCH_ASSOC);
-        }
         else return null;
     }
 
+    //поиск книги по автору
     public function searchByAuthor (int $id)
     {
-        $query = App::$db->getConnection()->prepare('select Book.Id_book, Book.Name, A2.Full_name, A2.Id_author from Book
+        $statement = 'select Book.Id_book, Book.Name, A2.Full_name, A2.Id_author from Book
                                                     inner join Authorship A on Book.Id_book = A.Id_book
                                                     inner join Author A2 on A2.Id_author = A.Id_author
-                                                    where A.Id_author = ? ORDER BY A2.Id_author');
+                                                    where A.Id_author = ? ORDER BY A2.Id_author';
+
+        $query = App::$db->getConnection()->prepare($statement);
+
         if ($query->execute([$id]))
-        {
             return $query->fetchAll(PDO::FETCH_ASSOC);
-        }
         else return null;
     }
 }

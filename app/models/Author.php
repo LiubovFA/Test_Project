@@ -22,7 +22,9 @@ class Author
 
     public function getNameById(int $id)
     {
-        $name = App::$db->getConnection()->prepare('Select Full_name from Author where Id_author = ?');
+        $statement = 'Select Full_name from Author where Id_author = ?';
+
+        $name = App::$db->getConnection()->prepare($statement);
 
         if ($name->execute([$id]))
         {
@@ -32,16 +34,22 @@ class Author
 
     public function getAll()
     {
-        $data = App::$db->getConnection()->query('SELECT * from Author')->fetchAll(PDO::FETCH_ASSOC);
+        $statement = 'SELECT * from Author';
+
+        $data = App::$db->getConnection()->query($statement)->fetchAll(PDO::FETCH_ASSOC);
 
         return $data;
     }
 
     public function searchAuthor (string $name)
     {
-        $query = App::$db->getConnection()->prepare('select Author.Id_author, Author.Full_name from Author
-                                                    where Contains (Full_name, ?)');
-        if ($query->execute([$name]))
+        $statement = 'select Author.Id_author, Author.Full_name from Author
+                      where Contains (Full_name, ?)';
+
+        $arg = '"'. $name . '"';
+
+        $query = App::$db->getConnection()->prepare($statement);
+        if ($query->execute([$arg]))
         {
             return $query->fetchAll(PDO::FETCH_ASSOC);
         }
