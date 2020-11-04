@@ -7,13 +7,12 @@ use test_project\app\controllers\BookController;
 class Router
 {
     private $routes = [
-        "#^/test_project$#"        => ['controller' => "Main", 'action' => "index", 'arg' => ''],
-        "#^/test_project/authors$#" => ['controller' => "Main", 'action' => "getAuthorList", 'arg' => ''],
-        "#^/test_project/authors/([0-9]+)$#" => ['controller'=> "Main", 'action' => 'getBooksByAuthor', 'arg' => ''],
-        "#^/test_project/books$#" => ['controller' => "Main", 'action' => 'index', 'arg' => ''],
-        "#^/test_project/books/([0-9]+)$#" => ['controller'=> "Book", 'action' => "Read", 'arg' => ''],
-        "#^/test_project/searchbook$#" => ['controller'=> "Main", 'action' => "searchBook", 'arg' => ''],
-        "#^/test_project/search$#" => ['controller' => "Main", 'action' => "search", 'arg' => '']
+        "#^/books$#"            => ['controller' => "Main", 'action' => "index", 'arg' => ''],
+        "#^/authors$#"          => ['controller' => "Main", 'action' => "getAuthorList", 'arg' => ''],
+        "#^/authors/([0-9]+)$#" => ['controller'=> "Main", 'action' => 'getBooksByAuthor', 'arg' => ''],
+        "#^/books/([0-9]+)$#"   => ['controller'=> "Book", 'action' => "Read", 'arg' => ''],
+        "#^/searchbook$#"       => ['controller'=> "Main", 'action' => "searchBook", 'arg' => ''],
+        "#^/search$#"           => ['controller' => "Main", 'action' => "search", 'arg' => '']
     ];
 
     private $controller = 'Main';
@@ -22,9 +21,9 @@ class Router
 
     public function __construct()
     {
-       /*$this->controller = 'Main';
+       $this->controller = 'Main';
        $this->action = 'index';
-       $this->arg = '';*/
+       $this->arg = '';
     }
 
     public function start()
@@ -32,11 +31,11 @@ class Router
         //echo 'Router is created! <br>';
         $path = $this->getURI();
 
-       // echo "request_uri = $path <br>";
+        //echo "request_uri = $path <br>";
 
         foreach($this->routes as $uri => $params)
         {
-           // echo 'check <br>';
+            //echo 'check <br>';
             $result = preg_match($uri, $path,$match);
             if ($result)
             {
@@ -48,9 +47,10 @@ class Router
                 $action = $params['action'];
 
                 //print_r($path_parts);
+                //echo count($path_parts);
 
-                if (array_key_exists(3, $path_parts)) {
-                    $arg = $path_parts[3];
+                if (array_key_exists(2, $path_parts)) {
+                    $arg = $path_parts[2];
                     $ctr_obj->$action($arg);
                 }
                 else
@@ -65,7 +65,7 @@ class Router
     private function getURI()
     {
         $query = rtrim($_SERVER['REQUEST_URI'], "/");
-       // echo $_SERVER['REQUEST_URI'].' $query is '.$query.' ';
+        //echo $_SERVER['REQUEST_URI'].' $query is '.$query.' ';
         return $query;
     }
 }

@@ -72,10 +72,12 @@ class MainController extends Controller
 
     public function searchBook ()
     {
+        echo "тут";
         if (isset($_POST['submit']))
         {
             if ($_POST['request'] != "")
             {
+                echo "тут я";
                 $request = $_POST['request'];
 
                 switch ($_POST['searchBy'])

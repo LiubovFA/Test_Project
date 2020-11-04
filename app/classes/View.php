@@ -9,8 +9,6 @@ class View
     private $layout = 'app/views/layout.php';
     public $viewName;
     public $dataType;
-   // private $path;
-   // private $args = [];
 
     public function __construct()
     {
@@ -30,7 +28,8 @@ class View
         $type = $this->dataType;
         // Если представление не было найдено, выбрасываем исключение
         if (!file_exists($fullPath)) {
-            throw new ErrorException('View cannot be found');
+            //$uri = $_SERVER['REQUEST_URI'];
+            throw new ErrorException("View cannot be found $fullPath");
         }
         else {
             ob_start();

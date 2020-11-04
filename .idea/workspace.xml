@@ -10,21 +10,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dfb40c1c-e73a-416e-ad30-a5320cfe2c14" name="Default Changelist" comment="Создана форма поиска книг по названию и по автору.&#10;Реализовано отображение результатов поиск в соответствии с запросом.&#10;Изменено отображение списков книг и авторов.">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b/storage_v2/_src_/database/bookshelf_db.nKzHPw/schema/dbo.sYMBAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b/storage_v2/_src_/database/bookshelf_db.nKzHPw/schema/dbo.sYMBAA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b/storage_v2/_src_/database/bookshelf_db.nKzHPw/schema/dbo.sYMBAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/942fbcbd-5c78-4af9-b48d-35e58d8e449b/storage_v2/_src_/database/bookshelf_db.nKzHPw/schema/dbo.sYMBAA.zip" afterDir="false" />
+    <list default="true" id="dfb40c1c-e73a-416e-ad30-a5320cfe2c14" name="Default Changelist" comment="- исправлено:&#10;* выполнение поиска по запросы из более одного слова&#10;* поведение при некорректном вводе номера страницы (происходит замена номером текущей страницы)&#10;* вывод title'а страницы в зависимости от содержания&#10;* стили отображения списков (добавлен отступ между пунктами списка)">
+      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/View.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Author.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Author.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Authorship.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Authorship.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Book.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/Read.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Read.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/js/viewPDF.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/js/viewPDF.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bookshelf_db.bak" beforeDir="false" afterPath="$PROJECT_DIR$/bookshelf_db.bak" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/layout.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/InstalledVersions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +54,7 @@
   </component>
   <component name="PhpServers">
     <servers>
-      <server host="localhost" id="fd543fb0-4137-4da6-9239-fa3e00ee5efa" name="test_server" />
+      <server host="testproject.loc" id="fd543fb0-4137-4da6-9239-fa3e00ee5efa" name="test_server" />
     </servers>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
@@ -101,15 +98,15 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Катерина\PhpstormProjects\test_project" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\daugh\PhpstormProjects\test_project\app\views\css" />
       <recent name="C:\Users\daugh\PhpstormProjects\test_project\app\views" />
       <recent name="C:\Users\Катерина\PhpstormProjects\test_project\app\views\style\css" />
       <recent name="C:\Users\Катерина\PhpstormProjects\test_project\app\views" />
       <recent name="C:\Users\Катерина\PhpstormProjects\test_project\app\views\Book" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Катерина\PhpstormProjects\test_project" />
     </key>
   </component>
   <component name="RunManager" selected="PHP Web Page.Run">
@@ -119,7 +116,7 @@
     <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/index.php">
       <method v="2" />
     </configuration>
-    <configuration name="Run" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="test_server" start_url="/test_project/">
+    <configuration name="Run" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="test_server" start_url="/books/">
       <method v="2" />
     </configuration>
     <list>
@@ -159,7 +156,7 @@
       <workItem from="1601185466035" duration="7696000" />
       <workItem from="1601282836252" duration="38329000" />
       <workItem from="1604329292456" duration="9554000" />
-      <workItem from="1604416439765" duration="5840000" />
+      <workItem from="1604416439765" duration="16155000" />
     </task>
     <task id="LOCAL-00001" summary="Created a new project&#10;Created a .htaccess file&#10;Connected Apache&#10;Initiated Composer">
       <created>1597966450286</created>
@@ -245,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604333829542</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="- исправлено:&#10;* выполнение поиска по запросы из более одного слова&#10;* поведение при некорректном вводе номера страницы (происходит замена номером текущей страницы)&#10;* вывод title'а страницы в зависимости от содержания&#10;* стили отображения списков (добавлен отступ между пунктами списка)">
+      <created>1604492282556</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1604492282556</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +279,8 @@
     <MESSAGE value="в классе Db подправила конструктор.&#10;в Router сделала проверку наличия ключа 3." />
     <MESSAGE value="Создана форма поиска книг по названию и по автору.&#10;Реализовано отображение результатов поиск в соответствии с запросом.&#10;Изменено отображение списков книг и авторов." />
     <MESSAGE value="Реализовано:&#10;* корректное постраничное отображение PDF&#10;- используется js-библиотека PDF.js и чистый JS, + css&#10;- возможность перелистывать страницы с помощью кнопок &quot;назад/вперед&quot;&#10;- отображение необходимой страницы текущей книги при ручном вводе и при последующем нажатии клавиши Enter&#10;- изменение идентификатора страницы по мере перелистывания книги&#10;- отображение названия выбранной книги&#10;- реализована форма навигации&#10;&#10;* поиск книги&#10;- по автору: пока по одному слову&#10;- по названию: пока по одному слову&#10;- отображение списка книг автора, по имени которого производился поиск&#10;&#10;Также исправлены следующие пункты:&#10;- отображение списка книг без повторов&#10;- в списке книг рядос с кажой книгой отображается ее авторы" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализовано:&#10;* корректное постраничное отображение PDF&#10;- используется js-библиотека PDF.js и чистый JS, + css&#10;- возможность перелистывать страницы с помощью кнопок &quot;назад/вперед&quot;&#10;- отображение необходимой страницы текущей книги при ручном вводе и при последующем нажатии клавиши Enter&#10;- изменение идентификатора страницы по мере перелистывания книги&#10;- отображение названия выбранной книги&#10;- реализована форма навигации&#10;&#10;* поиск книги&#10;- по автору: пока по одному слову&#10;- по названию: пока по одному слову&#10;- отображение списка книг автора, по имени которого производился поиск&#10;&#10;Также исправлены следующие пункты:&#10;- отображение списка книг без повторов&#10;- в списке книг рядос с кажой книгой отображается ее авторы" />
+    <MESSAGE value="- исправлено:&#10;* выполнение поиска по запросы из более одного слова&#10;* поведение при некорректном вводе номера страницы (происходит замена номером текущей страницы)&#10;* вывод title'а страницы в зависимости от содержания&#10;* стили отображения списков (добавлен отступ между пунктами списка)" />
+    <option name="LAST_COMMIT_MESSAGE" value="- исправлено:&#10;* выполнение поиска по запросы из более одного слова&#10;* поведение при некорректном вводе номера страницы (происходит замена номером текущей страницы)&#10;* вывод title'а страницы в зависимости от содержания&#10;* стили отображения списков (добавлен отступ между пунктами списка)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="278" y="38" key="#CLI_Interpreters" timestamp="1599737022722">
@@ -309,15 +314,19 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="194" y="254" key="#SQL_Dialects/0.0.1536.824@0.0.1536.824" timestamp="1598275781569" />
-    <state x="401" y="38" key="#Servers" timestamp="1599741258627">
+    <state x="401" y="38" key="#Servers" timestamp="1604500739218">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="401" y="38" key="#Servers/0.0.1366.728@0.0.1366.728" timestamp="1599741258627" />
+    <state x="401" y="38" key="#Servers/0.0.1366.728@0.0.1366.728" timestamp="1604500739218" />
     <state x="451" y="95" key="#Servers/0.0.1536.824@0.0.1536.824" timestamp="1598207950467" />
-    <state x="-23" y="0" width="1089" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604388380971">
+    <state x="480" y="153" key="#Web_Browsers" timestamp="1604497333813">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="-23" y="0" width="1089" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1604388380971" />
+    <state x="480" y="153" key="#Web_Browsers/0.0.1366.728@0.0.1366.728" timestamp="1604497333813" />
+    <state x="-23" y="0" width="1089" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1604501198809">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="-23" y="0" width="1089" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1604501198809" />
     <state x="127" y="88" width="1089" height="713" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1598462116730" />
     <state x="530" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598012541311">
       <screen x="0" y="0" width="1536" height="824" />
@@ -342,10 +351,10 @@
     </state>
     <state x="563" y="281" key="ComposerValidateDialog/0.0.1366.728@0.0.1366.728" timestamp="1599336817488" />
     <state x="633" y="318" key="ComposerValidateDialog/0.0.1536.824@0.0.1536.824" timestamp="1598098395714" />
-    <state x="200" y="142" key="FileChooserDialogImpl" timestamp="1604488389422">
+    <state x="200" y="142" key="FileChooserDialogImpl" timestamp="1604500090260">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="200" y="142" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604488389422" />
+    <state x="200" y="142" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1604500090260" />
     <state x="513" y="179" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1598721042967" />
     <state width="926" height="210" key="GridCell.Tab.0.bottom" timestamp="1598462166055">
       <screen x="0" y="0" width="1536" height="824" />
@@ -363,15 +372,15 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="926" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1598462166055" />
-    <state x="226" y="10" key="SettingsEditor" timestamp="1604488392063">
+    <state x="226" y="10" key="SettingsEditor" timestamp="1604500732006">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="226" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604488392063" />
+    <state x="226" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1604500732006" />
     <state x="494" y="39" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598462087228" />
-    <state x="290" y="139" key="Vcs.Push.Dialog.v2" timestamp="1601482121306">
+    <state x="290" y="139" key="Vcs.Push.Dialog.v2" timestamp="1604493216509">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="290" y="139" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1601482121306" />
+    <state x="290" y="139" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1604493216509" />
     <state x="326" y="157" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598790035762" />
     <state x="555" y="206" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1599405923461">
       <screen x="0" y="0" width="1366" height="728" />

@@ -8,12 +8,12 @@ $search = preg_match("/search/", $type);
 
 if ($search)
 {
-    echo "<form name=\"search-form\"  method=\"post\" action=\"http://localhost/test_project/searchbook\">
+    echo "<form name=\"search-form\"  method=\"post\" action=\"/searchbook\">
                 <input id=\"search_input\" type=\"text\" class=\"search-input\" name=\"request\" style='width: 400px' placeholder=\"Ищу ...\"/><br>
                 <input type=\"radio\" class=\"search-radio\" name=\"searchBy\" value=\"book\" checked/> По названию<br>                
                 <input type=\"radio\" class=\"search-radio\" name=\"searchBy\" value=\"author\"/> По автору<br>
                 <button id=\"search_button\" type=\"submit\" name=\"submit\">Найти</button>
-            </form><br>";
+            </form>";
 }
 
 //работаем с данными в случаем получения результатов поиска и в случае вывода списков авторов и книг
@@ -38,7 +38,7 @@ if (!empty($data)) {
             {
                 $id = $row['Id_author'];
                 echo "<li>";
-                echo "<a href=\"http://localhost/test_project/authors/$id\">";
+                echo "<a href=\"/authors/$id\">";
                 echo $row['Full_name'];
                 echo "</a></li>";
             }
@@ -54,7 +54,7 @@ if (!empty($data)) {
                 if ($i == 0)
                 {
                     echo "<p><li>" . $data[$i]['Full_name'] . ":<div class='list'><ul>
-                            <li><a href='\"http://localhost/test_project/books/" . $data[$i]['Id_book'] . "\"'>" . $data[$i]['Name'] . "</a></li>";
+                            <li><a href='\"/books/" . $data[$i]['Id_book'] . "\"'><q>" . $data[$i]['Name'] . "</q></a></li>";
                 }
                 else
                 {
@@ -62,11 +62,11 @@ if (!empty($data)) {
                     {
                         echo "</ul></div></li></p>";
                         echo "<p><li>" . $data[$i]['Full_name'] . ":<div class='list'>><ul>
-                                <li><a href='\"http://localhost/test_project/books/" . $data[$i]['Id_book'] . "\"'>" . $data[$i]['Name'] . "</a>></li>";
+                                <li><a href='\"/books/" . $data[$i]['Id_book'] . "\"'><q>" . $data[$i]['Name'] . "</q></a>></li>";
                     }
                     else
                     {
-                        echo "<li><a href=\"http://localhost/test_project/books/" . $data[$i]['Id_book'] . "\">" . $data[$i]['Name'] . "</a></li>";
+                        echo "<li><a href=\"/books/" . $data[$i]['Id_book'] . "\"><q>" . $data[$i]['Name'] . "</q></a></li>";
                     }
                 }
             }
@@ -84,7 +84,7 @@ if (!empty($data)) {
                 foreach ($data as $row) {
                     $id = $row['Id_book'];
                     echo "<li>";
-                    echo "<a href=\"http://localhost/test_project/books/$id\">";
+                    echo "<a href=\"/books/$id\">";
                     echo '<q>' . $row['Name'] . '</q>';
 
                     if ($type != "authorbooks")
@@ -104,7 +104,7 @@ if (!empty($data)) {
                     {
                         $id = $data[$i]['Id_book'];
                         echo "<li>";
-                        echo "<a href=\"http://localhost/test_project/books/$id\">";
+                        echo "<a href=\"/books/$id\">";
                         echo '<q>' . $data[$i]['Name'] . '</q>';
                         echo " - " . $data[$i]['Full_name'];
                     }
@@ -119,7 +119,7 @@ if (!empty($data)) {
                             echo "</a></li>";
                             $id = $data[$i]['Id_book'];
                             echo "<li>";
-                            echo "<a href=\"http://localhost/test_project/books/$id\">";
+                            echo "<a href=\"/books/$id\">";
                             echo '<q>' . $data[$i]['Name'] . '</q>';
                             echo " - " . $data[$i]['Full_name'];
                         }

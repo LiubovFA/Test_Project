@@ -8,20 +8,18 @@
     <title><?php echo $title?></title>
 </head>
 <body>
-<!--<a class="dropdown-item" href="http://localhost/test_project/authors">По автору</a>
-<a class="dropdown-item" href="http://localhost/test_project">По названию</a>-->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="http://localhost/test_project">BOOK_shelf</a>
+    <a class="navbar-brand" href="/books">BOOK_shelf</a>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Показать</a>
             <li class="nav-item dropdown">
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="http://localhost/test_project/authors">Список авторов</a>
-                    <a class="dropdown-item" href="http://localhost/test_project">Список книг</a>
+                    <a class="dropdown-item" href="/authors">Список авторов</a>
+                    <a class="dropdown-item" href="/books">Список книг</a>
                 </div>
             </li>
-            <a class="nav-link" href="http://localhost/test_project/search">Поиск книги</a>>
+            <a class="nav-link" href="/search">Поиск книги</a>
         </ul>
     </div>
 </nav>
