@@ -54,7 +54,7 @@ if (!empty($data)) {
                 if ($i == 0)
                 {
                     echo "<p><li>" . $data[$i]['Full_name'] . ":<div class='list'><ul>
-                            <li><a href='\"/books/" . $data[$i]['Id_book'] . "\"'><q>" . $data[$i]['Name'] . "</q></a></li>";
+                            <li><a href='/books/" . $data[$i]['Id_book'] . "'><q>" . $data[$i]['Name'] . "</q></a></li>";
                 }
                 else
                 {
@@ -62,11 +62,11 @@ if (!empty($data)) {
                     {
                         echo "</ul></div></li></p>";
                         echo "<p><li>" . $data[$i]['Full_name'] . ":<div class='list'>><ul>
-                                <li><a href='\"/books/" . $data[$i]['Id_book'] . "\"'><q>" . $data[$i]['Name'] . "</q></a>></li>";
+                                <li><a href='/books/" . $data[$i]['Id_book'] . "'><q>" . $data[$i]['Name'] . "</q></a>></li>";
                     }
                     else
                     {
-                        echo "<li><a href=\"/books/" . $data[$i]['Id_book'] . "\"><q>" . $data[$i]['Name'] . "</q></a></li>";
+                        echo "<li><a href='/books/" . $data[$i]['Id_book'] . "'><q>" . $data[$i]['Name'] . "</q></a></li>";
                     }
                 }
             }
@@ -84,7 +84,7 @@ if (!empty($data)) {
                 foreach ($data as $row) {
                     $id = $row['Id_book'];
                     echo "<li>";
-                    echo "<a href=\"/books/$id\">";
+                    echo "<a href='/books/$id'>";
                     echo '<q>' . $row['Name'] . '</q>';
 
                     if ($type != "authorbooks")
@@ -104,7 +104,7 @@ if (!empty($data)) {
                     {
                         $id = $data[$i]['Id_book'];
                         echo "<li>";
-                        echo "<a href=\"/books/$id\">";
+                        echo "<a href='/books/$id'>";
                         echo '<q>' . $data[$i]['Name'] . '</q>';
                         echo " - " . $data[$i]['Full_name'];
                     }
@@ -119,7 +119,7 @@ if (!empty($data)) {
                             echo "</a></li>";
                             $id = $data[$i]['Id_book'];
                             echo "<li>";
-                            echo "<a href=\"/books/$id\">";
+                            echo "<a href='/books/$id'>";
                             echo '<q>' . $data[$i]['Name'] . '</q>';
                             echo " - " . $data[$i]['Full_name'];
                         }

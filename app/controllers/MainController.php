@@ -63,6 +63,7 @@ class MainController extends Controller
         }
     }
 
+    //страница поиска
     public function search()
     {
         $this->view->setView("Index", "search");
@@ -70,6 +71,7 @@ class MainController extends Controller
         $this->showView('Поиск книги');
     }
 
+    //получение, обработка запроса поиска и вывод результата
     public function searchBook ()
     {
         echo "тут";
